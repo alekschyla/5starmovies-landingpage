@@ -1,7 +1,10 @@
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+body {
+    width: 100%;
 }
 
 /* HEADER */
@@ -26,7 +29,8 @@
 
 /* SECTION */
 .section {
-
+    width: 70%;
+    margin: 0 auto;
 }
 
 /* HERO SECTION */
@@ -42,6 +46,26 @@
 /* PRODUCT INFO SECTION */
 .product-info {
 
+}
+.product-info__info-container {
+    display: flex;
+}
+.info-container__info {
+    flex: 1;
+    border: 1px solid black;
+}
+.info__title {
+    padding: 30px 30px 10px;
+}
+.info__description {
+    padding: 0 30px;
+}
+.info-container__img {
+    flex: 1;
+    border: 1px solid black;
+}
+.info-container__img img {
+    max-width: 100%;
 }
 
 /* TEAM INFO SECTION */
