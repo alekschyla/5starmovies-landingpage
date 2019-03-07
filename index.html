@@ -1,43 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5starMovies</title>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
+
 <body>
-<header class="header">
-    <div class="logo"></div>
-    <nav class="navigation">
+    <header id="top" class="header">
+        <div class="logo"></div>
+        <nav class="navigation">
 
-    </nav>
-</header>
-<main class="main">
-    <section id="hero" class="section hero">
+        </nav>
+    </header>
+    <main class="main">
+        <section id="hero" class="section hero">
 
-    </section>
-    <section id="features" class="section features">
+        </section>
+        <section id="features" class="section features">
 
-    </section>
-    <section id="product-info" class="section product-info">
+        </section>
+        <section id="product-info" class="section product-info">
 
-    </section>
-    <section id="team-info" class="section team-info">
+        </section>
+        <section id="team-info" class="section team-info">
 
-    </section>
-    <section id="premiere-form" class="section premiere-form">
+        </section>
+        <section id="premiere-form" class="section premiere-form">
+            <h3>Zapisz się na premierę aplikacji!</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui, reiciendis odio, libero nemo
+                necessitatibus itaque iusto adipisci veritatis quam, sapiente consequatur dolores quod doloremque
+                placeat ipsa laudantium sunt? Assumenda.
+            </p>
+            <form action="./index.html" target="_self">
+                <p><input id="e-mail" name="e-mail" type="text" placeholder="adres e-mail" required /></p>
+                <p><input id="checkbox" name="checkbox" type="checkbox" />
+                    <label for="checkbox">xxx</label></p>
+                <p><input id="submit-premiere" type="submit" value="Wyślij" /></p>
+            </form>
+        </section>
+        <section id="contact" class="section contact">
+            <div class="contact__flex-container">
+                <div class="contact-map">
+                    <h3>Kontakt</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor nisi adipisci repudiandae,
+                        error odio maiores eius perferendis accusamus esse eos labore distinctio facere doloremque cum
+                        culpa consectetur aliquam recusandae.</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1767.1698000135618!2d22.633483850338283!3d51.21621107460572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472257458ad7b011%3A0xafda8023fdc17b70!2sFundacja+Rozwoju+Lubelszczyzny!5e0!3m2!1sen!2spl!4v1551972931591"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="contact-form">
+                    <h3>Napisz do nas!</h3>
+                    <form action="">
+                        <p><input id="name" name="name" type="text" placeholder="Imię i Nazwisko" required /></p>
+                        <p><input id="e-mail" name="e-mail" type="text" placeholder="adres e-mail" required /></p>
+                        <p><textarea id="message" name="message" required>Tu wpisz swoją wiadomość</textarea></p>
+                        <p><input id="submit-premiere" type="submit" value="Wyślij" /></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    </section>
-    <section id="contact" class="section contact">
+    <footer class="footer">
+        <div class="footer__flex-container">
+            <div class="row">
+                <p>xxxx</p>
+                <p>xxxx</p>
+                <p>xxx</p>
+            </div>
+            <div class="row">
+                <p><a href="#top">Powrót na górę</a></p>
+            </div>
+        </div>
+    </footer>
 
-    </section>
-</main>
-
-<footer class="footer">
-
-</footer>
-
-<script rel="script" src="script.js"></script>
+    <script rel="script" src="script.js"></script>
 </body>
+
 </html>
