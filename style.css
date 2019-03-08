@@ -5,7 +5,7 @@
 }
 body {
     width: 100%;
-    background: #F1E0C5;
+    background: #C9B79C;
 }
 
 /* HEADER */
@@ -25,13 +25,13 @@ body {
 
 /* MAIN */
 .main {
-
+    width: 70%;
+    margin: 0 auto;
 }
 
 /* SECTION */
 .section {
-    width: 70%;
-    margin: 0 auto;
+
 }
 
 /* HERO SECTION */
@@ -47,8 +47,7 @@ body {
 /* PRODUCT INFO SECTION */
 .product-info {
     text-align: justify;
-    margin-top: 2%;
-    background: #C9B79C;
+    background: #F1E0C5;
 }
 .product-info__info-container {
     display: flex;
@@ -65,9 +64,18 @@ body {
 }
 .info-container__img {
     flex: 1;
-    background-image: url("http://www.staszic.edu.pl/wp-content/uploads/2017/10/movie.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+}
+.info-img__feature1 {
+    background-image: url("https://www.movieartarena.com/imgs/bladerunner2049ff.jpg");
+}
+.info-img__feature2 {
+    background-image: url("https://ae01.alicdn.com/kf/HTB1cU2Ub50TMKJjSZFNq6y_1FXan/Wonder-Woman-Movie-Poster-2017-DC-Comics-Gal-Gadot-Film-Art-24x36.jpg");
+}
+.info-img__feature3 {
+    background-image: url("https://motionpictureart.com/wp-content/uploads/2018/02/GhostBustersMoviePosterDutch1.jpg");
 }
 
 @media only screen and (max-width: 1007px) {
