@@ -53,6 +53,13 @@
 .premiere-form {
 
 }
+.popup-window {
+    display: none;
+    border: 1px solid #342A21;
+    background-color: #F1E0C5;
+    color: #342A21;
+    font-size: 20px;
+}
 
 /* CONTACT SECTION */
 .contact {

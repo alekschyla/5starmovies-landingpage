@@ -29,16 +29,24 @@
 
         </section>
         <section id="premiere-form" class="section premiere-form">
+            <div id="popup-window" class="popup-window">
+                Wyskakujące okienko!
+            </div>
             <h3>Zapisz się na premierę aplikacji!</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui, reiciendis odio, libero nemo
                 necessitatibus itaque iusto adipisci veritatis quam, sapiente consequatur dolores quod doloremque
                 placeat ipsa laudantium sunt? Assumenda.
             </p>
-            <form action="./index.html" target="_self">
-                <p><input id="e-mail" name="e-mail" type="text" placeholder="adres e-mail" required /></p>
+            <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
+                <input type="hidden" name="subject" value="Tytuł wiadomości">
+                <input type="hidden" name="message" value="Treść wiadomości">
+                <input type="hidden" name="from" value="paulina.oster@gmail.com">
+                <input type="hidden" name="fromName" value="5starMovies">
+                <input type="hidden" name="redirect" value="index.html">
+                <p><input id="e-mail" name="emails[]" type="text" placeholder="adres e-mail" required /></p>
                 <p><input id="checkbox" name="checkbox" type="checkbox" />
                     <label for="checkbox">xxx</label></p>
-                <p><input id="submit-premiere" type="submit" value="Wyślij" /></p>
+                <p><input id="submit-premiere" type="submit" value="Wyślij" onclick="document.getElementById('popup-window').style.display='block'"/></p>
             </form>
         </section>
         <section id="contact" class="section contact">
@@ -54,7 +62,7 @@
                 </div>
                 <div class="contact-form">
                     <h3>Napisz do nas!</h3>
-                    <form action="">
+                    <form action="./index.html" target="_self">
                         <p><input id="name" name="name" type="text" placeholder="Imię i Nazwisko" required /></p>
                         <p><input id="e-mail" name="e-mail" type="text" placeholder="adres e-mail" required /></p>
                         <p><textarea id="message" name="message" required>Tu wpisz swoją wiadomość</textarea></p>
