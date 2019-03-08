@@ -29,44 +29,48 @@
 
         </section>
         <section id="premiere-form" class="section premiere-form">
-            <div id="popup-window" class="popup-window">
-                Wyskakujące okienko!
+            <div class="premiere-form__flex-container">
+                <h2>Zapisz się na premierę aplikacji!</h2>
+                <div class="premiere-form-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui, reiciendis odio, libero nemo
+                    necessitatibus itaque iusto adipisci veritatis quam, sapiente consequatur dolores quod doloremque
+                    placeat ipsa laudantium sunt? Assumenda.
+                </div>
+                <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
+                    <input type="hidden" name="subject" value="Tytuł wiadomości">
+                    <input type="hidden" name="message" value="Treść wiadomości">
+                    <input type="hidden" name="from" value="5starMovies@example.com">
+                    <input type="hidden" name="fromName" value="5starMovies">
+                    <input type="hidden" name="redirect" value="http://5starsmovies.jfddl7.is-academy.pl/thankyou.html">
+                    <p><input id="e-mail" name="emails[]" type="email" placeholder="adres e-mail" required /></p>
+                    <p><input id="checkbox" name="checkbox" type="checkbox" required />
+                        <label for="checkbox">chcę otrzymać e-mail z powiadomieniem</label></p>
+                    <p><input id="submit-premiere" type="submit" value="Wyślij" required /></p>
+                </form>
             </div>
-            <h3>Zapisz się na premierę aplikacji!</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui, reiciendis odio, libero nemo
-                necessitatibus itaque iusto adipisci veritatis quam, sapiente consequatur dolores quod doloremque
-                placeat ipsa laudantium sunt? Assumenda.
-            </p>
-            <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
-                <input type="hidden" name="subject" value="Tytuł wiadomości">
-                <input type="hidden" name="message" value="Treść wiadomości">
-                <input type="hidden" name="from" value="paulina.oster@gmail.com">
-                <input type="hidden" name="fromName" value="5starMovies">
-                <input type="hidden" name="redirect" value="index.html">
-                <p><input id="e-mail" name="emails[]" type="text" placeholder="adres e-mail" required /></p>
-                <p><input id="checkbox" name="checkbox" type="checkbox" />
-                    <label for="checkbox">xxx</label></p>
-                <p><input id="submit-premiere" type="submit" value="Wyślij" onclick="document.getElementById('popup-window').style.display='block'"/></p>
-            </form>
         </section>
         <section id="contact" class="section contact">
             <div class="contact__flex-container">
                 <div class="contact-map">
-                    <h3>Kontakt</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor nisi adipisci repudiandae,
+                    <h2>Kontakt</h2>
+                    <p class="contact-map-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor nisi adipisci repudiandae,
                         error odio maiores eius perferendis accusamus esse eos labore distinctio facere doloremque cum
                         culpa consectetur aliquam recusandae.</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1767.1698000135618!2d22.633483850338283!3d51.21621107460572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472257458ad7b011%3A0xafda8023fdc17b70!2sFundacja+Rozwoju+Lubelszczyzny!5e0!3m2!1sen!2spl!4v1551972931591"
-                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        width="300" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
                 <div class="contact-form">
-                    <h3>Napisz do nas!</h3>
+                    <div id="popup-window" class="popup-window">
+                        Wyskakujące okienko!
+                    </div>
+                    <h2>Napisz do nas!</h2>
                     <form action="./index.html" target="_self">
-                        <p><input id="name" name="name" type="text" placeholder="Imię i Nazwisko" required /></p>
-                        <p><input id="e-mail" name="e-mail" type="text" placeholder="adres e-mail" required /></p>
+                        <p><input id="name" name="name" type="text" placeholder="Imię i Nazwisko" required
+                                pattern="[A-Za-z' -]{5,30}" /></p>
+                        <p><input id="e-mail" name="e-mail" type="email" placeholder="adres e-mail" required /></p>
                         <p><textarea id="message" name="message" required>Tu wpisz swoją wiadomość</textarea></p>
-                        <p><input id="submit-premiere" type="submit" value="Wyślij" /></p>
+                        <p><input id="submit-premiere" type="submit" value="Wyślij"
+                                onclick="document.getElementById('popup-window').style.display='block'" /></p>
                     </form>
                 </div>
             </div>
