@@ -17,7 +17,10 @@
     </header>
     <main class="main">
         <section id="hero" class="section hero">
-
+            <button id="hero-button">Kliknij!</button>
+            <div id="popup-window" class="popup-window">
+                Wyskakujące okienko!
+            </div>
         </section>
         <section id="features" class="section features">
 
@@ -31,7 +34,8 @@
         <section id="premiere-form" class="section premiere-form">
             <div class="premiere-form__flex-container">
                 <h2>Zapisz się na premierę aplikacji!</h2>
-                <div class="premiere-form-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui, reiciendis odio, libero nemo
+                <div class="premiere-form-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic qui,
+                    reiciendis odio, libero nemo
                     necessitatibus itaque iusto adipisci veritatis quam, sapiente consequatur dolores quod doloremque
                     placeat ipsa laudantium sunt? Assumenda.
                 </div>
@@ -52,7 +56,8 @@
             <div class="contact__flex-container">
                 <div class="contact-map">
                     <h2>Kontakt</h2>
-                    <p class="contact-map-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor nisi adipisci repudiandae,
+                    <p class="contact-map-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor nisi
+                        adipisci repudiandae,
                         error odio maiores eius perferendis accusamus esse eos labore distinctio facere doloremque cum
                         culpa consectetur aliquam recusandae.</p>
                     <iframe
@@ -60,17 +65,18 @@
                         width="300" height="225" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
                 <div class="contact-form">
-                    <div id="popup-window" class="popup-window">
-                        Wyskakujące okienko!
-                    </div>
                     <h2>Napisz do nas!</h2>
-                    <form action="./index.html" target="_self">
-                        <p><input id="name" name="name" type="text" placeholder="Imię i Nazwisko" required
+                    <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
+                        <p><input id="name" name="fromName" type="text" placeholder="Imię i Nazwisko" required
                                 pattern="[A-Za-z' -]{5,30}" /></p>
-                        <p><input id="e-mail" name="e-mail" type="email" placeholder="adres e-mail" required /></p>
+                        <input type="hidden" name="emails[]" value="paulina.oster@gmail.com">
+                        <p><input id="e-mail" name="from" type="email" placeholder="Podaj swój adres e-mail" required />
+                        </p>
+                        <input type="hidden" name="subject" value="Wiadomość przesłana przez formularz kontaktowy">
                         <p><textarea id="message" name="message" required>Tu wpisz swoją wiadomość</textarea></p>
-                        <p><input id="submit-premiere" type="submit" value="Wyślij"
-                                onclick="document.getElementById('popup-window').style.display='block'" /></p>
+                        <p><input id="submit-contact" type="submit" value="Wyślij" /></p>
+                        <input type="hidden" name="redirect"
+                            value="http://5starsmovies.jfddl7.is-academy.pl/index.html">
                     </form>
                 </div>
             </div>
@@ -79,12 +85,12 @@
 
     <footer class="footer">
         <div class="footer__flex-container">
-            <div class="row">
+            <div class="footer_row">
                 <p>xxxx</p>
                 <p>xxxx</p>
                 <p>xxx</p>
             </div>
-            <div class="row">
+            <div class="footer_row">
                 <p><a href="#top">Powrót na górę</a></p>
             </div>
         </div>
