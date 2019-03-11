@@ -1,5 +1,5 @@
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -26,13 +26,60 @@
 
 /* SECTION */
 .section {
-
+    width: 70%;
+    margin: 0 auto;
 }
 
 /* HERO SECTION */
 .hero {
+ width: 100%;
+}
+.hero__image {
+    color: #342A21;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://paradoks.net.pl/image_files/text/25497/859caaec1584f638ba0d2918d3d3d405.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 10%;
+}
+.hero__title {
+    font-weight: lighter;
+    font-size: 48px;
+}
+.hero__description {
+    font-size: 20px;
+}
+.hero__button{
+    display: block;
+    color: #342A21;
+    margin: 10px auto;
+    width: 180px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    border: 2px solid #342A21;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.hero__button:hover {
+    color: #C9B79C;
+    border: 2px solid #C9B79C;
+    background: #342A21;
+}
+@media screen and (max-width: 768px) {
+    .hero__title {
+        font-size: 32px;
+    }
+    .hero__description {
+        font-size: 16px;
+    }
+    .hero__button {
+        font-size: 18px;
+        padding: 3px;
+    }
 
 }
+
 
 /* FEATURES SECTION */
 .features {
