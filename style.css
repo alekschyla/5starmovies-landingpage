@@ -29,8 +29,7 @@ body {
 
 /* MAIN */
 .main {
-    width: 70%;
-    margin: 0 auto;
+    
 }
 
 /* SECTION */
@@ -87,13 +86,6 @@ body {
         padding: 3px;
     }
 
-}
-.popup-window {
-    display: none;
-    border: 1px solid #342A21;
-    background-color: #F1E0C5;
-    color: #342A21;
-    font-size: 20px;
 }
 
 
