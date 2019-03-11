@@ -102,7 +102,17 @@ body {
 }
 
 /* TEAM INFO SECTION */
-.team-info {
+.teammates {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 5px;
+
+
+
+}
+.teammates-item {
+    text-align: center;
 
 }
 
