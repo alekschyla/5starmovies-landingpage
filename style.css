@@ -150,8 +150,8 @@ body {
 .teammates {
     display: flex;
     justify-content: space-around;
-    margin: 5px;
-    padding: 5px;
+    margin: 20px auto ;
+    
     max-width: 70%;
 }
 
