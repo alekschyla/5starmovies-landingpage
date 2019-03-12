@@ -108,13 +108,23 @@ body {
     margin: 5px;
     padding: 5px;
 
-
-
 }
 .teammates-item {
     text-align: center;
 
 }
+
+.teammate-item__photo {
+    padding-top: 56.25%;
+    width: 200px;
+}
+
+@media only screen and (max-width: 640px) {
+    .teammates {
+        display: flex;
+        flex-direction: column;
+
+
 
 /* PREMIERE INFO SECTION */
 .premiere-form {
