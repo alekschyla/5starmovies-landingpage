@@ -5,10 +5,6 @@
 }
 body {
     width: 100%;
-    background: #C9B79C;
-}
-
-body {
     background-color: #C9B79C;
 }
 
@@ -127,7 +123,7 @@ body {
     background-image: url("https://motionpictureart.com/wp-content/uploads/2018/02/GhostBustersMoviePosterDutch1.jpg");
 }
 
-@media only screen and (max-width: 1007px) {
+@media screen and (max-width: 1024px) {
     .info__title {
         font-size: 18px;
         padding: 10px 30px 0;
@@ -136,7 +132,7 @@ body {
         padding: 0 10px 5px;
     }
 }
-@media only screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
     .product-info__info-container {
         display: flex;
         flex-direction: column;
@@ -255,8 +251,15 @@ body {
     color:  #342A21;
     background-color: #C9B79C;
 }
-
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px){
+    .section {
+        width: 90%;
+    }
+    .input {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
     .section {
         width: 90%;
     }
@@ -290,13 +293,5 @@ body {
         padding: 10px;
         flex-direction: column;
         align-items: center;
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 1023px){
-    .section {
-        width: 90%;
-    }
-    .input {
-        width: 100%;
     }
 }

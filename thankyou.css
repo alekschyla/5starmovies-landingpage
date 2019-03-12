@@ -39,7 +39,7 @@ button {
     background-color: #71816D;
     font-size: 16px;
 }
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 768px) {
     .flex-container {
         padding: 15px;
     }
@@ -54,7 +54,7 @@ button {
         font-size: 12px;
     }
 }
-@media screen and (min-width: 640px) and (max-width: 1006px){
+@media screen and (min-width: 769px) and (max-width: 1024px){
     .flex-container {
         padding: 20px;
     }
