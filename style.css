@@ -15,8 +15,39 @@
 }
 
 /* NAVIGATION */
-.navigation {
+.menu{
+    display: flex;
 
+    background-color: yellow;
+
+
+}
+.menu__logo{
+    flex-grow: 1;
+}     
+
+
+.menu__list{
+    display: flex;
+    flex-grow: 5;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu__logo, .menu__list-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.menu__list-item{
+    background-color:#f2efc7;
+    flex-grow: 1;
+}
+.menu__logo{
+    height: 50px;
 }
 
 /* MAIN */
