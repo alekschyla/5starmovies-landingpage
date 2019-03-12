@@ -8,6 +8,10 @@ body {
     background: #C9B79C;
 }
 
+body {
+    background-color: #C9B79C;
+}
+
 /* HEADER */
 .header {
 
@@ -25,19 +29,65 @@ body {
 
 /* MAIN */
 .main {
-    width: 70%;
-    margin: 0 auto;
+    
 }
 
 /* SECTION */
 .section {
-
+    width: 70%;
+    margin: 0 auto;
 }
 
 /* HERO SECTION */
 .hero {
+ width: 100%;
+}
+.hero__image {
+    color: #342A21;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://paradoks.net.pl/image_files/text/25497/859caaec1584f638ba0d2918d3d3d405.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 10%;
+}
+.hero__title {
+    font-weight: lighter;
+    font-size: 48px;
+}
+.hero__description {
+    font-size: 20px;
+}
+.hero__button{
+    display: block;
+    color: #342A21;
+    margin: 10px auto;
+    width: 180px;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    border: 2px solid #342A21;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.hero__button:hover {
+    color: #C9B79C;
+    border: 2px solid #C9B79C;
+    background: #342A21;
+}
+@media screen and (max-width: 768px) {
+    .hero__title {
+        font-size: 32px;
+    }
+    .hero__description {
+        font-size: 16px;
+    }
+    .hero__button {
+        font-size: 18px;
+        padding: 3px;
+    }
 
 }
+
 
 /* FEATURES SECTION */
 .features {
@@ -107,7 +157,7 @@ body {
     justify-content: space-around;
     margin: 5px;
     padding: 5px;
-
+    max-width: 70%;
 }
 
 
@@ -137,20 +187,126 @@ body {
     .teammates {
         display: flex;
         flex-direction: column;
-
+    }
+}
 
 
 /* PREMIERE INFO SECTION */
 .premiere-form {
-
+    background-color: #71816D;
+    color: #F1E0C5;
+    font-size: 18px;
+    padding: 20px;
+}
+.premiere-form__flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.premiere-form__item {
+    width: 60%;
+    padding: 10px;
+}
+.premiere-form__item p {
+    padding: 10px;
+}
+.input {
+    width: 330px;
+    height: 30px;
+}
+.button {
+    width: 125px;
+    height: 30px;
+    background-color: #F1E0C5;
+    color: #71816D;
+    font-size: 18px;
+}
+.button--green {
+    background-color: #71816D;
+    color:  #F1E0C5;
 }
 
 /* CONTACT SECTION */
 .contact {
+    background-color: #F1E0C5;
+    padding: 20px;
+}
+.contact__flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.contact-map {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.contact-map__item {
+    padding: 10px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+}
+.contact-form p {
+    padding: 10px;
+    text-align: center;
+}
+.contact-message {
+    width: 330px;
+    height: 150px;
+}
 
+@media screen and (max-width: 600px){
+    .contact__flex-container {
+        flex-direction: column;
+    }
+    .contact-map {
+        width: 100%;
+    }
+    .contact-map__item{
+        text-align: center;
+    }
+    .contact-form{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .premiere-form__item {
+        width: 100%;
+    }
 }
 
 /* FOOTER */
 .footer {
-
+    width: 100%;
+    height: 70px;
+    background-color: #342A21;
+    color: #C9B79C;
+}
+.footer__flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.footer_row {
+    display: flex;
+    width: 50%;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.footer-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color:  #C9B79C;
+    padding: 5px;
+}
+.footer-link:hover {
+    color:  #342A21;
+    background-color: #C9B79C;
 }
