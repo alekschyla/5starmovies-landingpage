@@ -5,10 +5,6 @@
 }
 body {
     width: 100%;
-    background: #C9B79C;
-}
-
-body {
     background-color: #C9B79C;
 }
 
@@ -88,7 +84,6 @@ body {
 
 }
 
-
 /* FEATURES SECTION */
 .features {
 
@@ -128,7 +123,7 @@ body {
     background-image: url("https://motionpictureart.com/wp-content/uploads/2018/02/GhostBustersMoviePosterDutch1.jpg");
 }
 
-@media only screen and (max-width: 1007px) {
+@media screen and (max-width: 1024px) {
     .info__title {
         font-size: 18px;
         padding: 10px 30px 0;
@@ -137,7 +132,7 @@ body {
         padding: 0 10px 5px;
     }
 }
-@media only screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
     .product-info__info-container {
         display: flex;
         flex-direction: column;
@@ -205,7 +200,7 @@ body {
 .contact-map {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
 }
 .contact-map__item {
     padding: 10px;
@@ -215,40 +210,21 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 30%;
+    width: 40%;
 }
 .contact-form p {
     padding: 10px;
     text-align: center;
 }
 .contact-message {
-    width: 330px;
+    width: 100%;
     height: 150px;
-}
-
-@media screen and (max-width: 600px){
-    .contact__flex-container {
-        flex-direction: column;
-    }
-    .contact-map {
-        width: 100%;
-    }
-    .contact-map__item{
-        text-align: center;
-    }
-    .contact-form{
-        width: 100%;
-        margin-top: 20px;
-    }
-    .premiere-form__item {
-        width: 100%;
-    }
 }
 
 /* FOOTER */
 .footer {
     width: 100%;
-    height: 70px;
+    height: auto;
     background-color: #342A21;
     color: #C9B79C;
 }
@@ -274,4 +250,48 @@ body {
 .footer-link:hover {
     color:  #342A21;
     background-color: #C9B79C;
+}
+@media screen and (max-width: 1024px){
+    .section {
+        width: 90%;
+    }
+    .input {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .section {
+        width: 90%;
+    }
+    .input {
+        width: 100%;
+    }
+    .contact__flex-container {
+        flex-direction: column;
+    }
+    .contact-map {
+        width: 100%;
+    }
+    .contact-map__item{
+        text-align: center;
+    }
+    .contact-form{
+        width: 100%;
+        margin-top: 20px;
+        padding: 0px;
+    }
+    .contact-form p {
+        width: 100%;
+        padding: 5px;
+        margin: 0px;
+    }
+    .premiere-form__item {
+        width: 100%;
+    }
+    .footer_row {
+        width: 100%;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -39,3 +39,33 @@ button {
     background-color: #71816D;
     font-size: 16px;
 }
+@media screen and (max-width: 1024px){
+    .flex-container {
+        padding: 20px;
+    }
+    .flex-item {
+        padding: 15px;
+        font-size: 20px;
+    }
+    .h1 {
+        font-size: 25px;
+    }
+    button {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .flex-container {
+        padding: 15px;
+    }
+    .flex-item {
+        padding: 10px;
+        font-size: 15px;
+    }
+    .h1 {
+        font-size: 15px;
+    }
+    button {
+        font-size: 12px;
+    }
+}
