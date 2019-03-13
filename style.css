@@ -147,9 +147,44 @@ body {
 }
 
 /* TEAM INFO SECTION */
-.team-info {
+.teammates {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto ;
+    
+    max-width: 70%;
+}
+
+.teammates-item a {
+    text-decoration: none;
+}
+.teammates-item:hover a {
+    font-size: 24px;
+    color: red;
+}
+
+.teammates-item {
+    text-align: center;
 
 }
+
+.teammate-item__photo {
+    width: 100%;
+}
+
+.teammates-item__photo-sizer{
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+    .teammates {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
 
 /* PREMIERE INFO SECTION */
 .premiere-form {
