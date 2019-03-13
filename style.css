@@ -155,8 +155,6 @@ body {
     max-width: 70%;
 }
 
-
-
 .teammates-item a {
     text-decoration: none;
 }
@@ -178,12 +176,14 @@ body {
     overflow: hidden;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 768px) {
     .teammates {
         display: flex;
         flex-direction: column;
     }
 }
+
+
 
 
 /* PREMIERE INFO SECTION */
