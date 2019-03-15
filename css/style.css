@@ -51,6 +51,9 @@ body {
     overflow: hidden;
     position: relative;
 }
+.hero__carousel-wrapper {
+    position: relative;
+}
 
 .carousel__slide {
     width: 100%;
@@ -72,49 +75,39 @@ body {
 .carousel__slide--z-index {
     z-index: 2222;
 }
-
 .hero__information {
+    color: white;
     width: 100%;
-    height: 500px;
+    top: 50%;
+    transform: translate(0, -50%);
     position: absolute;
-    z-index: 1;
-}
-
-.hero__image {
-    color: #342A21;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://paradoks.net.pl/image_files/text/25497/859caaec1584f638ba0d2918d3d3d405.jpg");
-    background-size: cover;
-    background-position: center;
+    z-index: 5555;
     text-align: center;
-    padding: 10%;
 }
-
 .hero__title {
     font-weight: lighter;
     font-size: 48px;
 }
-
 .hero__description {
     font-size: 20px;
 }
-
 .hero__button {
     display: block;
-    color: #342A21;
+    color: white;
     margin: 10px auto;
     width: 180px;
     cursor: pointer;
     font-size: 18px;
     padding: 5px;
-    border: 2px solid #342A21;
+    border: 2px solid white;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .hero__button:hover {
-    color: #C9B79C;
-    border: 2px solid #C9B79C;
-    background: #342A21;
+    color: black;
+    border: 2px solid white;
+    background: white;
 }
 
 @media screen and (max-width: 768px) {
