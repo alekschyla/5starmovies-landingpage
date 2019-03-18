@@ -100,12 +100,14 @@ opacity: 0.5;
     padding: 10%;
 }
 .hero__title {
-    font-weight: lighter;
     font-size: 48px;
+    text-shadow: 3px 3px 2px #F1E0C5;
 }
 .hero__description {
     font-size: 20px;
     text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 3px 3px 2px #F1E0C5;
 }
 .hero__button{
     display: block;
@@ -199,10 +201,11 @@ opacity: 0.5;
 }
 .info__title {
     font-size: 24px;
-    padding: 30px 30px 10px 40px;
+    padding: 50px 50px 10px 60px;
 }
 .info__description {
-    padding: 0 30px 30px;
+    padding: 0 50px 50px;
+    font-size: 18px;
 }
 .info-container__img {
     flex: 1;
