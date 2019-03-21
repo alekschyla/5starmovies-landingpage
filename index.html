@@ -5,50 +5,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5starMovies</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
 </head>
 
 <body>
-    <header id="top" class="header">
-        <div class="logo"></div>
-        <nav class="navigation">
-        </nav>
 
+    <header id="top" class="header">
+        <nav class="menu">
+            <img src="images/logo.png" class="menu__logo" alt="5starMovies" />
+
+            <ul class="menu__list">
+                <a href="#hero" class="menu__list-item">
+                    <li>strona główna</li>
+                </a>
+                <a href="#features" class="menu__list-item">
+                    <li>funkcje</li>
+                </a>
+                <a href="#product-info" class="menu__list-item">
+                    <li>więcej</li>
+                </a>
+                <a href="#team-info" class="menu__list-item">
+                    <li>o zespole</li>
+                </a>
+                <a href="#contact" class="menu__list-item">
+                    <li>kontakt</li>
+                </a>
+            </ul>
+        </nav>
     </header>
+
     <main class="main">
         <section id="hero" class="hero">
             <div class="hero__container">
                 <div class="hero__image">
                     <div class="hero__information">
-                        <h1 class="hero__title">Lorem ipsum</h1>
-                        <p class="hero__description">Habitio, torus, et homo.</p>
+                        <h1 class="hero__title">5starMovies</h1>
+                        <p class="hero__description">twoja osobista baza filmów na wyciągnięcie ręki</p>
                         <a href="#premiere-form" class="hero__button">Zapisz się na premierę</a>
                     </div>
                 </div>
             </div>
         </section>
+
         <section id="features" class="section features">
 
-        </section>
+            <div class="features__container">
 
+                <div class="feature-title__description">
+                    <h2>funkcje</h2>
+                </div>
+                <div class="feature-card__container">
+
+                    <div class="features__feature-card">
+                        <div class="feature-card__image">
+                            <img class="feature__img" src="icons\film-editing.svg" />
+                            <div class="feature-card__description">
+                                Stwórz swoją osobistą bazę filmów do obejrzenia
+                            </div>
+                        </div>
+                    </div>
+                    <div class="features__feature-card">
+                        <div class="feature-card__image">
+                            <img class="feature__img" src="icons\movie-player.svg" />
+                            <div class="feature-card__description">
+                                Oceniaj obejrzane przez siebie filmy
+                            </div>
+                        </div>
+                    </div>
+                    <div class="features__feature-card">
+                        <div class="feature-card__image">
+                            <img class="feature__img" src="icons\clapperboard.svg" />
+                            <div class="feature-card__description">
+                                Podziel się swoją listą filmów ze znajomymi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section id="product-info" class="section product-info">
             <div class="product-info__info-container">
                 <div class="info-container__info">
-                    <h3 class="info__title">Feature 1</h3>
-                    <div class="info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.
+                    <h3 class="info__title">Twoja osobista baza filmów</h3>
+                    <div class="info__description">
+                        Twoja osobista lista filmów - nie zastanawiaj sie już więcej co byś obejrzał albo co chciałeś
+                        obejrzeć. Z naszą aplikacją stworzysz swoją własną listę filmów które najbardziej byś chciał
+                        obejrzeć. Już nigdy więcej nie spędzaj wieczoru na szukaniu filmów.
                     </div>
                 </div>
                 <div class="info-container__img info-img__feature1">
@@ -59,40 +104,23 @@
                 <div class="info-container__img info-img__feature2">
                 </div>
                 <div class="info-container__info">
-                    <h3 class="info__title">Feature 2</h3>
-                    <div class="info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.
+                    <h3 class="info__title">Oceniaj filmy</h3>
+                    <div class="info__description">
+                        Wystawiaj oceny i opinie każdemu obejrzanemu filmowi lub serialowi. Oceniaj pozycje za pomocą
+                        gwiazdek od 1 do 5. Najlepiej ocenione
+                        dodawaj do listy ulubionych filmów i seriali, by wiedzieć do czego chcesz wrócić w przyszłości.
                     </div>
                 </div>
             </div>
 
             <div class="product-info__info-container">
                 <div class="info-container__info">
-                    <h3 class="info__title">Feature 3</h3>
-                    <div class="info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.
+                    <h3 class="info__title">Dziel się ze znajomymi</h3>
+                    <div class="info__description">
+                        Bądź jeszcze bliżej ze swoimi przyjaciółmi. Dziel się z nimi swoją listą filmów i seriali do
+                        obejrzenia, jak również wystawionymi im ocenami. Udostępniaj je kilkoma kliknięciami na
+                        facebooku, pokaż co lubisz i co właśnie oglądasz.
+
                     </div>
                 </div>
                 <div class="info-container__img info-img__feature3">
@@ -104,43 +132,43 @@
         <section id="team-info" class="teammates">
             <div class="teammates-item">
                 <div class="teammates-item__photo-sizer">
-                    <img src="./paulina_conva.jpg" alt="PHOTO" class="teammate-item__photo">
+                    <img src="./images/paulina_conva.jpg" alt="PHOTO" class="teammate-item__photo">
                 </div>
                 <h3>Paulina Oster</h3>
-                <div class="teammates-description">Junior Front-end developer.</div>
+                <div class="teammates-description">Junior Front-end developer</div>
                 <a href="http://paulinaoster.github.io" class="team__link">Link do profilu</a>
             </div>
             <div class="teammates-item">
                 <div class="teammates-item__photo-sizer">
-                    <img src="./ola_conva.jpg" alt="PHOTO" class="teammate-item__photo">
+                    <img src="./images/ola_conva.jpg" alt="PHOTO" class="teammate-item__photo">
                 </div>
                 <h3>Aleksandra Chyła</h3>
-                <div class="teammates-description">Junior Front-end developer.</div>
+                <div class="teammates-description">Junior Front-end developer</div>
                 <a href="https://github.com/alekschyla" class="team__link">Link do profilu</a>
             </div>
             <div class="teammates-item">
                 <div class="teammates-item__photo-sizer">
-                    <img src="./jakub_conva.jpg" alt="PHOTO" class="teammate-item__photo">
+                    <img src="./images/jakub_conva.jpg" alt="PHOTO" class="teammate-item__photo">
                 </div>
                 <h3>Jakub Sawczuk</h3>
-                <div class="teammates-description">Junior Front-end developer.</div>
+                <div class="teammates-description">Junior Front-end developer</div>
                 <a href="" class="team__link">Link do profilu</a>
             </div>
             <div class="teammates-item">
                 <div class="teammates-item__photo-sizer">
-                    <img src="./wojtek_conva.jpg" alt="PHOTO" class="teammate-item__photo">
+                    <img src="./images/wojtek_conva.jpg" alt="PHOTO" class="teammate-item__photo">
                 </div>
                 <h3>Miotła Wojciech</h3>
-                <div class="teammates-description">Junior Front-end developer.</div>
+                <div class="teammates-description">Junior Front-end developer</div>
                 <a href="" class="team__link">Link do profilu</a>
             </div>
             <div class="teammates-item">
                 <div class="teammates-item__photo-sizer">
-                    <img src="./jakub_conva.jpg" alt="PHOTO" class="teammate-item__photo">
+                    <img src="./images/przemek_conva.jpg" alt="PHOTO" class="teammate-item__photo">
                 </div>
                 <h3>Przemysław Gdula</h3>
-                <div class="teammates-description">Junior Front-end developer.</div>
-                <a href="" class="team__link">Link do profilu</a>
+                <div class="teammates-description">Junior Front-end developer</div>
+                <a href="images/przemek_conva.jpg" class="team__link">Link do profilu</a>
             </div>
         </section>
         <section id="premiere-form" class="section premiere-form">
@@ -154,8 +182,8 @@
                 </div>
                 <div class="premiere-form__item">
                     <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
-                        <input type="hidden" name="subject" value="Tytuł wiadomości">
-                        <input type="hidden" name="message" value="Treść wiadomości">
+                        <input type="hidden" name="subject" value="Zapraszamy na premierę aplikacji">
+                        <input type="hidden" name="message" value="Zapraszamy na premierę aplikacji w dniu 31/12/3112.">
                         <input type="hidden" name="from" value="5starMovies@example.com">
                         <input type="hidden" name="fromName" value="5starMovies">
                         <input type="hidden" name="redirect"
@@ -163,8 +191,9 @@
                         <p><input id="e-mail-p" class="input" name="emails[]" type="email"
                                 placeholder="Podaj swój adres e-mail" required /></p>
                         <p><input id="checkbox" name="checkbox" type="checkbox" required />
-                            <label for="checkbox">chcę otrzymać e-mail z powiadomieniem</label></p>
-                        <p><input id="submit-premiere" class="button" type="submit" value="Wyślij" required /></p>
+                            <label for="checkbox" class="pointer">chcę otrzymać e-mail z powiadomieniem</label></p>
+                        <p><input id="submit-premiere" class="button pointer" type="submit" value="Wyślij" required />
+                        </p>
                     </form>
                 </div>
             </div>
@@ -174,10 +203,10 @@
             <div class="contact__flex-container">
                 <div class="contact-map">
                     <h2 class="contact-map__item">Kontakt</h2>
-                    <p class="contact-map__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor nisi
-                        adipisci repudiandae,
-                        error odio maiores eius perferendis accusamus esse eos labore distinctio facere doloremque cum
-                        culpa consectetur aliquam recusandae.</p>
+                    <p class="contact-map__item">infoShareAcademy</p>
+                    <p class="contact-map__item">Męczenników Majdanka 181</p>
+                    <p class="contact-map__item">20-325 Lublin</p>
+                    <p class="contact-map__item">tel. 666-666-666</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1767.1698000135618!2d22.633483850338283!3d51.21621107460572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472257458ad7b011%3A0xafda8023fdc17b70!2sFundacja+Rozwoju+Lubelszczyzny!5e0!3m2!1sen!2spl!4v1551972931591"
                         width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -192,9 +221,10 @@
                                 placeholder="Podaj swój adres e-mail" required />
                         </p>
                         <input type="hidden" name="subject" value="Wiadomość przesłana przez formularz kontaktowy">
-                        <p><textarea id="message" class="contact-message" name="message"
-                                required>Tu wpisz swoją wiadomość</textarea></p>
-                        <p><input id="submit-contact" class="button button--green" type="submit" value="Wyślij" /></p>
+                        <p><textarea id="message" class="contact-message" name="message" required
+                                placeholder="Tu wpisz swoją wiadomość"></textarea></p>
+                        <p><input id="submit-contact" class="button button--green pointer" type="submit"
+                                value="Wyślij" /></p>
                         <input type="hidden" name="redirect"
                             value="http://5starsmovies.jfddl7.is-academy.pl/index.html">
                     </form>
@@ -204,19 +234,25 @@
     </main>
 
     <footer class="footer">
+
         <div class="footer__flex-container">
-            <div class="footer_row">
-                <p>©2019</p>
-                <p>5starMovies</p>
+            <div class="footer__license">Icons made by <a class="footer-link" href="https://www.freepik.com/"
+                    title="Freepik">Freepik</a> from <a class="footer-link" href="https://www.flaticon.com/"
+                    title="Flaticon">www.flaticon.com</a> is licensed by <a class="footer-link"
+                    href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                    target="_blank">CC 3.0 BY</a></div>
+            <div class="footer__row">
+                <p>©2019 5starMovies</p>
                 <p>NIP 666-666-666</p>
             </div>
-            <div class="footer_row">
+            <div class="footer__row">
                 <p><a class="footer-link" href="#top">Powrót na górę</a></p>
             </div>
         </div>
     </footer>
 
-    <script rel="script" src="./script.js"></script>
+    <script rel="script" src="scripts/script.js"></script>
+
 </body>
 
 </html>
