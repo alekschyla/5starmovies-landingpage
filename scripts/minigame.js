@@ -18,7 +18,7 @@ Game.prototype.render = function () {
     this.placeHand();
     this.gameArray.forEach(row => {
         row.forEach(cell => {
-            this.renderCell();
+            this.renderCell(cell);
         });
     });
 };
@@ -28,7 +28,7 @@ Game.prototype.makeGameBoardArray = function () {
         Array(this.boardDimension)
             .fill("x")
             .map(
-                row => Array(this.boardDimension).fill("x")
+                () => Array(this.boardDimension).fill("x")
             )
     )
 };
@@ -45,17 +45,20 @@ Game.prototype.makeGameBoard = function () {
     this.container.appendChild(gameBoard);
 };
 
-Game.prototype.renderCell = function () {
-    const cell = document.createElement('div');
-    cell.style.width = this.cellDimension;
-    cell.style.height = this.cellDimension;
-    cell.style.border = '1px solid black';
-    this.gameBoard.appendChild(cell);
+Game.prototype.renderCell = function (cell) {
+    const cellEl = document.createElement('div');
+    cellEl.style.width = this.cellDimension;
+    cellEl.style.height = this.cellDimension;
+    cellEl.style.border = '1px solid black';
+    if (cell === "h") {
+        cellEl.style.backgroundColor = "red";
+    }
+    this.gameBoard.appendChild(cellEl);
 };
 
-Game.prototype.placeHand = function() {
-    this.gameArray[this.handPosition[0].x][this.handPosition[0].y] = 'h';
-    this.gameArray[this.handPosition[1].x][this.handPosition[1].y] = 'h';
+Game.prototype.placeHand = function () {
+    this.gameArray[this.handPosition[0].y][this.handPosition[0].x] = 'h';
+    this.gameArray[this.handPosition[1].y][this.handPosition[1].x] = 'h';
 };
 
 Game.prototype.oscarMove = function () {
