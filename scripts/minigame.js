@@ -1,6 +1,7 @@
 function Game(selector) {
     this.container = document.querySelector(selector);
     this.gameArray = [];
+    this.score = 0;
     this.gameBoard = null;
     this.boardDimension = 20;
     this.cellDimension = (100 / this.boardDimension) + '%';
@@ -13,6 +14,7 @@ function Game(selector) {
 
 Game.prototype.render = function () {
     this.container.innerHTML = '';
+    this.makeFieldWithScore();
     this.makeGameBoardArray();
     this.makeGameBoard();
     this.placeHand();
@@ -33,10 +35,21 @@ Game.prototype.makeGameBoardArray = function () {
     )
 };
 
+Game.prototype.makeFieldWithScore = function() {
+    const div = document.createElement("div");
+    div.style.width = "500px";
+    div.style.backgroundColor = "black";
+    div.style.color = "white";
+    div.style.margin = "0 auto";
+    div.style.textAlign = "center";
+    div.innerText = `Score: ${this.score}`;
+    this.container.appendChild(div);
+};
+
 Game.prototype.makeGameBoard = function () {
     const gameBoard = document.createElement("div");
     gameBoard.style.width = "500px";
-    gameBoard.style.height = "500px";
+    gameBoard.style.height = "800px";
     gameBoard.style.backgroundColor = "grey";
     gameBoard.style.margin = "0 auto";
     gameBoard.style.display = 'flex';
