@@ -1,9 +1,10 @@
 function Game(selector) {
     this.container = document.querySelector(selector);
     this.gameArray = [];
-    this.oscars = [];
-    this.gameTick = 500;
+    this.oscars = this.makeOscarsArray();
+    this.gameTick = 300;
     this.score = 0;
+    this.delay = -3;
     this.gameBoard = null;
     this.boardDimension = 20;
     this.cellDimension = (100 / this.boardDimension) + '%';
@@ -76,28 +77,28 @@ Game.prototype.placeHand = function () {
     this.gameArray[this.handPosition[1].y][this.handPosition[1].x] = 'h';
 };
 
-Game.prototype.oscarsArray = function () {
+Game.prototype.makeOscarsArray = function () {
     this.oscars = (new Array(20))
         .fill(1)
-        .map(el => ({
+        .map(() => ({
             x: Math.floor(Math.random() * 20),
             y: -1,
-            delay: 0
         }));
-        for (let i = 0; i < this.oscars.length; i++){}
+    for (let i = 1; i < this.oscars.length; i++) {
+        this.oscars[i].y = this.oscars[i-1].y + this.delay;
+    }
     return this.oscars;
 };
 
 Game.prototype.oscarsMove = function () {
-    this.oscars = this.oscarsArray();
     for (let i = 0; i < this.oscars.length; i++) {
-        this.oscars[i].y = this.oscars[i].y + 1 + this.oscars[i].delay;
+        this.oscars[i].y = this.oscars[i].y + 1;
     }
     return this.oscars;
 };
 
 Game.prototype.oscarsInterval = function () {
-    setInterval(this.oscarsMove(), this.gameTick);
+    setInterval(this.render(), this.gameTick);
 };
 
 Game.prototype.handMove = function () {
