@@ -68,12 +68,11 @@ Game.prototype.renderCell = function (cell) {
     cellEl.style.width = this.cellDimension;
     cellEl.style.height = this.cellDimension;
     cellEl.style.textAlign = "center";
-    cellEl.style.border = '1px solid black';
     if (cell === "h") {
-        cellEl.style.backgroundColor = "red";
+        cellEl.style.backgroundColor = "black";
     }
     if (cell === "o") {
-        cellEl.innerText = "o";
+        cellEl.innerHTML = "<img src='https://i.imgur.com/l4L88sY.png'/>";
     }
     this.gameBoard.appendChild(cellEl);
 };
