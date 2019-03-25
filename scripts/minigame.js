@@ -124,8 +124,9 @@ Game.prototype.oscarsMove = function () {
 Game.prototype.oscarsInterval = function () {
     setInterval(() => {
         this.oscarsMove();
+        this.checkIfOscarWasCaught();
         this.render();
-    } , this.gameTick);
+    }, this.gameTick);
 };
 
 Game.prototype.startGame = function () {
@@ -141,7 +142,12 @@ Game.prototype.handMove = function () {
 };
 
 Game.prototype.checkIfOscarWasCaught = function () {
-
+    this.oscars.forEach((element) => {
+        if ((element.x === this.handPosition[0].x && element.y === this.handPosition[0].y) || (element.x === this.handPosition[1].x && element.y === this.handPosition[1].y)) {
+            this.score += 1;
+            element.y = -1;
+        }
+    });
 };
 
 Game.prototype.endGame = function () {
