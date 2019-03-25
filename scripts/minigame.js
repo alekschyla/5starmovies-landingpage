@@ -1,21 +1,27 @@
 function Game(selector) {
     this.container = document.querySelector(selector);
-
+    this.oscarAmount = 100;
     this.gameArray = [];
-    this.oscars = this.makeOscarsArray();
-    this.gameTick = 300;
+    this.oscars = [];
+    this.gameTick = 500;
     this.score = 0;
     this.delay = -3;
     this.gameBoard = null;
     this.boardDimension = 20;
     this.cellDimension = (100 / this.boardDimension) + '%';
     this.handPosition = [
-        {x: 9, y: 19},
-        {x: 10, y: 19}
+        { x: 9, y: 19 },
+        { x: 10, y: 19 }
     ];
 
-    this.render();
+    this.init();
 }
+
+Game.prototype.init = function () {
+    this.oscars = this.makeOscarsArray();
+    this.render();
+    this.startGame();
+};
 
 Game.prototype.render = function () {
     this.container.innerHTML = '';
@@ -39,10 +45,10 @@ Game.prototype.makeGameBoardArray = function () {
             .map(
                 () => Array(this.boardDimension).fill("x")
             )
-    )
+    );
 };
 
-Game.prototype.makeFieldWithScore = function() {
+Game.prototype.makeFieldWithScore = function () {
     const div = document.createElement("div");
     div.style.width = "500px";
     div.style.backgroundColor = "black";
@@ -74,7 +80,7 @@ Game.prototype.renderCell = function (cell) {
         cellEl.style.backgroundColor = "black";
     }
     if (cell === "o") {
-        cellEl.innerHTML = "<img src='https://i.imgur.com/l4L88sY.png'/>";
+        cellEl.innerHTML = "<img src='./images/oscar.png'/>";
     }
     this.gameBoard.appendChild(cellEl);
 };
@@ -85,22 +91,26 @@ Game.prototype.placeHand = function () {
 };
 
 Game.prototype.makeOscarsArray = function () {
-    this.oscars = (new Array(20))
+    this.oscars = (new Array(this.oscarAmount))
         .fill(1)
         .map(() => ({
             x: Math.floor(Math.random() * 20),
             y: -1,
         }));
     for (let i = 1; i < this.oscars.length; i++) {
-        this.oscars[i].y = this.oscars[i-1].y + this.delay;
+        this.oscars[i].y = this.oscars[i - 1].y + this.delay;
     }
     return this.oscars;
 };
 
-Game.prototype.renderOscar = function() {
+Game.prototype.renderOscar = function () {
     this.oscars.forEach(oscar => {
-        this.gameArray[oscar.y][oscar.x] = 'o';
-        this.gameArray[oscar.y][oscar.x] = 'o';
+        if (
+            this.gameArray[oscar.y] &&
+            this.gameArray[oscar.y][oscar.x]
+        ) {
+            this.gameArray[oscar.y][oscar.x] = 'o';
+        }
     });
 };
 
@@ -112,7 +122,19 @@ Game.prototype.oscarsMove = function () {
 };
 
 Game.prototype.oscarsInterval = function () {
-    setInterval(this.render(), this.gameTick);
+    setInterval(() => {
+        this.oscarsMove();
+        this.render();
+    } , this.gameTick);
+};
+
+Game.prototype.startGame = function () {
+    window.addEventListener(
+        'keypress',
+        (event) => {
+            if (event.key === "Enter") this.oscarsInterval();
+        }
+    );
 };
 
 Game.prototype.handMove = function () {
