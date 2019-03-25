@@ -6,10 +6,12 @@ function Game(selector) {
     this.boardDimension = 20;
     this.cellDimension = (100 / this.boardDimension) + '%';
     this.handPosition = [
-        {x: 9, y: 19},
-        {x: 10, y: 19}
+        { x: 9, y: 19 },
+        { x: 10, y: 19 }
     ];
+
     this.render();
+    this.startListeningArrowKeys()
 }
 
 Game.prototype.render = function () {
@@ -35,7 +37,7 @@ Game.prototype.makeGameBoardArray = function () {
     )
 };
 
-Game.prototype.makeFieldWithScore = function() {
+Game.prototype.makeFieldWithScore = function () {
     const div = document.createElement("div");
     div.style.width = "500px";
     div.style.backgroundColor = "black";
@@ -58,6 +60,48 @@ Game.prototype.makeGameBoard = function () {
     this.container.appendChild(gameBoard);
 };
 
+Game.prototype.startListeningArrowKeys = function () {
+    window.addEventListener(
+        'keydown',
+        event => {
+            switch (event.key) {
+                case 'ArrowLeft':
+                    event.preventDefault()
+                    this.moveLeft()
+                    break
+                case 'ArrowRight':
+                    event.preventDefault()
+                    this.moveRight()
+                    break
+            }
+        }
+    )
+}
+
+Game.prototype.moveRight = function () {
+
+    if (this.handPosition[0].x < 18) {
+        this.handPosition = [
+            { x: this.handPosition[0].x + 1, y: 19 },
+            { x: this.handPosition[1].x + 1, y: 19 }
+        ];
+    }
+
+    this.render()
+}
+
+Game.prototype.moveLeft = function () {
+
+    if (this.handPosition[0].x > 0) {
+        this.handPosition = [
+            { x: this.handPosition[0].x - 1, y: 19 },
+            { x: this.handPosition[1].x - 1, y: 19 }
+        ];
+    }
+
+    this.render()
+}
+
 Game.prototype.renderCell = function (cell) {
     const cellEl = document.createElement('div');
     cellEl.style.width = this.cellDimension;
@@ -78,7 +122,7 @@ Game.prototype.oscarMove = function () {
 
 };
 
-Game.prototype.handMove = function () {
+Game.prototype.handMove = function (newHandPosition) {
 
 };
 
