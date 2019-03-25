@@ -1,5 +1,6 @@
 function Game(selector) {
     this.container = document.querySelector(selector);
+
     this.gameArray = [];
     this.oscars = this.makeOscarsArray();
     this.gameTick = 300;
@@ -12,15 +13,18 @@ function Game(selector) {
         {x: 9, y: 19},
         {x: 10, y: 19}
     ];
+
     this.render();
 }
 
 Game.prototype.render = function () {
     this.container.innerHTML = '';
+
     this.makeFieldWithScore();
     this.makeGameBoardArray();
     this.makeGameBoard();
     this.placeHand();
+    this.renderOscar();
     this.gameArray.forEach(row => {
         row.forEach(cell => {
             this.renderCell(cell);
@@ -65,9 +69,12 @@ Game.prototype.renderCell = function (cell) {
     const cellEl = document.createElement('div');
     cellEl.style.width = this.cellDimension;
     cellEl.style.height = this.cellDimension;
-    cellEl.style.border = '1px solid black';
+    cellEl.style.textAlign = "center";
     if (cell === "h") {
-        cellEl.style.backgroundColor = "red";
+        cellEl.style.backgroundColor = "black";
+    }
+    if (cell === "o") {
+        cellEl.innerHTML = "<img src='https://i.imgur.com/l4L88sY.png'/>";
     }
     this.gameBoard.appendChild(cellEl);
 };
@@ -88,6 +95,13 @@ Game.prototype.makeOscarsArray = function () {
         this.oscars[i].y = this.oscars[i-1].y + this.delay;
     }
     return this.oscars;
+};
+
+Game.prototype.renderOscar = function() {
+    this.oscars.forEach(oscar => {
+        this.gameArray[oscar.y][oscar.x] = 'o';
+        this.gameArray[oscar.y][oscar.x] = 'o';
+    });
 };
 
 Game.prototype.oscarsMove = function () {
