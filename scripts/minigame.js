@@ -1,6 +1,6 @@
 function Game(selector) {
     this.container = document.querySelector(selector);
-    this.oscarAmount = 50;
+    this.oscarAmount = 5;
     this.gameArray = [];
     this.oscars = [];
     this.gameTick = 500;
@@ -19,6 +19,7 @@ function Game(selector) {
 
 Game.prototype.init = function () {
     this.oscars = this.makeOscarsArray();
+    this.score = 0;
     this.render();
     this.startListeningArrowKeys();
     this.startGame();
@@ -27,6 +28,7 @@ Game.prototype.init = function () {
 Game.prototype.render = function () {
     this.container.innerHTML = '';
 
+    this.makeFieldWithHighScores();
     this.makeFieldWithScore();
     this.makeGameBoardArray();
     this.makeGameBoard();
@@ -48,6 +50,53 @@ Game.prototype.makeGameBoardArray = function () {
                 () => Array(this.boardDimension).fill("x")
             )
     );
+};
+
+Game.prototype.makeFieldToSaveUserNameAndScore = function () {
+    const nameDiv = document.createElement('div');
+    const nameInput = document.createElement('input');
+    const nameButton = document.createElement('button');
+    this.container.appendChild(nameDiv);
+    nameDiv.appendChild(nameInput);
+    nameDiv.appendChild(nameButton);
+    nameInput.setAttribute('placeholder', 'Podaj swoje imię lub ksywkę');
+    nameButton.innerText = "Zapisz";
+
+    nameDiv.style.width = "500px";
+    nameDiv.style.backgroundColor = "#342A21";
+    nameDiv.style.color = "white";
+    nameDiv.style.margin = "0 auto";
+    nameDiv.style.textAlign = "center";
+
+    nameButton.addEventListener(
+        'click',
+        () => {
+            const valueFromInput = document.querySelector('input').value;
+            this.saveScore(valueFromInput, this.score);
+            this.init();
+        }
+    );
+};
+
+Game.prototype.makeFieldWithHighScores = function () {
+    const div = document.createElement("div");
+    const list = document.createElement('ol');
+    const listItem = document.createElement('li');
+    div.innerText = "Highest Scores:";
+    this.container.appendChild(div);
+    div.appendChild(list);
+
+    div.style.width = "500px";
+    div.style.backgroundColor = "#342A21";
+    div.style.color = "white";
+    div.style.margin = "0 auto";
+    div.style.textAlign = "center";
+
+    const highestScores = this.loadScores();
+    for (let i = 0; i < highestScores.length; i++) {
+        list.appendChild(listItem);
+        listItem.innerText = `${highestScores[i].name} ${highestScores[i].score}`;
+    }
 };
 
 Game.prototype.makeFieldWithScore = function () {
@@ -138,7 +187,7 @@ Game.prototype.makeOscarsArray = function () {
     this.oscars = (new Array(this.oscarAmount))
         .fill(1)
         .map(() => ({
-            x: Math.floor(Math.random() * 20),
+            x: Math.floor(Math.random() * this.boardDimension),
             y: -1,
         }));
     for (let i = 1; i < this.oscars.length; i++) {
@@ -182,26 +231,41 @@ Game.prototype.startGame = function () {
     );
 };
 
+Game.prototype.loadScores = function () {
+    return JSON.parse(localStorage.getItem('scores')) || [];
+};
+
+Game.prototype.saveScore = function (valueFromInput, score) {
+    const currentScores = this.loadScores();
+
+    const newScores = currentScores.concat({ name: valueFromInput, score: score });
+
+    // newScores.sort()
+    // filter - only 10 best
+
+    localStorage.setItem('scores', JSON.stringify(newScores));
+};
 
 Game.prototype.checkIfOscarWasCaught = function () {
     this.oscars.forEach((element) => {
         if ((element.x === this.handPosition[0].x && element.y === this.handPosition[0].y) || (element.x === this.handPosition[1].x && element.y === this.handPosition[1].y)) {
             this.score += 1;
-            element.y = 20;
+            element.y = this.boardDimension;
         }
     });
 };
 
-Game.prototype.endGame = function () { 
+Game.prototype.endGame = function () {
     if (this.checkIfOscarsFell()) {
-    window.clearInterval(this.gameIntervalId);
+        window.clearInterval(this.gameIntervalId);
+        this.makeFieldToSaveUserNameAndScore();
     }
 };
 
 Game.prototype.checkIfOscarsFell = function () {
     let ifOscarsFell = true;
     for (let i = 0; i < this.oscars.length; i++) {
-        if (this.oscars[i].y < 20 ) {
+        if (this.oscars[i].y < this.boardDimension) {
             ifOscarsFell = false;
         }
     }
