@@ -1,6 +1,6 @@
 function Game(selector) {
     this.container = document.querySelector(selector);
-    this.oscarAmount = 10;
+    this.oscarAmount = 50;
     this.gameArray = [];
     this.oscars = [];
     this.gameTick = 500;
@@ -53,7 +53,7 @@ Game.prototype.makeGameBoardArray = function () {
 Game.prototype.makeFieldWithScore = function () {
     const div = document.createElement("div");
     div.style.width = "500px";
-    div.style.backgroundColor = "black";
+    div.style.backgroundColor = "#342A21";
     div.style.color = "white";
     div.style.margin = "0 auto";
     div.style.textAlign = "center";
@@ -65,7 +65,7 @@ Game.prototype.makeGameBoard = function () {
     const gameBoard = document.createElement("div");
     gameBoard.style.width = "500px";
     gameBoard.style.height = "800px";
-    gameBoard.style.backgroundColor = "grey";
+    gameBoard.style.backgroundColor = "#C9B79C";
     gameBoard.style.margin = "0 auto";
     gameBoard.style.display = 'flex';
     gameBoard.style.flexWrap = 'wrap';
@@ -121,7 +121,7 @@ Game.prototype.renderCell = function (cell) {
     cellEl.style.height = this.cellDimension;
     cellEl.style.textAlign = "center";
     if (cell === "h") {
-        cellEl.style.backgroundColor = "black";
+        cellEl.style.backgroundColor = "#342A21";
     }
     if (cell === "o") {
         cellEl.innerHTML = "<img src='./images/oscar.png'/>";
