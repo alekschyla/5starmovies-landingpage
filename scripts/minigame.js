@@ -73,7 +73,7 @@ Game.prototype.makeFieldToSaveUserNameAndScore = function () {
         () => {
             const valueFromInput = document.querySelector('input').value;
             this.saveScore(valueFromInput, this.score);
-            this.init();
+            location.reload(true);
         }
     );
 };
@@ -81,7 +81,6 @@ Game.prototype.makeFieldToSaveUserNameAndScore = function () {
 Game.prototype.makeFieldWithHighScores = function () {
     const div = document.createElement("div");
     const list = document.createElement('ol');
-    const listItem = document.createElement('li');
     div.innerText = "Highest Scores:";
     this.container.appendChild(div);
     div.appendChild(list);
@@ -94,8 +93,7 @@ Game.prototype.makeFieldWithHighScores = function () {
 
     const highestScores = this.loadScores();
     for (let i = 0; i < highestScores.length; i++) {
-        list.appendChild(listItem);
-        listItem.innerText = `${highestScores[i].name} ${highestScores[i].score}`;
+        list.innerHTML += `<li>${highestScores[i].name} ${highestScores[i].score}</li>`;
     }
 };
 
@@ -148,7 +146,7 @@ Game.prototype.moveRight = function () {
             { x: this.handPosition[1].x + 1, y: 19 }
         ];
     }
-
+    this.checkIfOscarWasCaught();
     this.render();
 };
 
@@ -160,7 +158,7 @@ Game.prototype.moveLeft = function () {
             { x: this.handPosition[1].x - 1, y: 19 }
         ];
     }
-
+    this.checkIfOscarWasCaught();
     this.render();
 };
 
