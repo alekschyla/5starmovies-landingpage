@@ -1,5 +1,5 @@
 function Game(selector) {
-    this.container = document.querySelector(selector);
+    this.container = document.querySelector(selector) || document.body;
     this.oscarAmount = 5;
     this.gameArray = [];
     this.oscars = [];
@@ -26,8 +26,9 @@ Game.prototype.init = function () {
 };
 
 Game.prototype.render = function () {
-    this.container.innerHTML = '';
 
+    this.makeGameContainer();
+    this.makeFieldWithGameInstructions();
     this.makeFieldWithHighScores();
     this.makeFieldWithScore();
     this.makeGameBoardArray();
@@ -42,6 +43,31 @@ Game.prototype.render = function () {
     this.endGame();
 };
 
+Game.prototype.makeGameContainer = function () {
+    this.container.innerHTML = '';
+
+    const mainDiv = document.createElement('div');
+    const leftDiv = document.createElement('div');
+    const middleDiv = document.createElement('div');
+    const rightDiv = document.createElement('div');
+
+    mainDiv.className = 'game-container';
+    leftDiv.className = 'left-container';
+    middleDiv.className = 'middle-container';
+    rightDiv.className = 'right-container';
+
+    this.container.appendChild(mainDiv);
+    mainDiv.appendChild(leftDiv);
+    mainDiv.appendChild(middleDiv);
+    mainDiv.appendChild(rightDiv);
+};
+
+Game.prototype.makeFieldWithGameInstructions = function () {
+    const instructionsDiv = document.createElement('div');
+    instructionsDiv.innerText = 'Instrukcja do gry';
+    document.querySelector('.left-container').appendChild(instructionsDiv);
+};
+
 Game.prototype.makeGameBoardArray = function () {
     this.gameArray = (
         Array(this.boardDimension)
@@ -53,27 +79,21 @@ Game.prototype.makeGameBoardArray = function () {
 };
 
 Game.prototype.makeFieldToSaveUserNameAndScore = function () {
-    const nameDiv = document.createElement('div');
     const nameInput = document.createElement('input');
     const nameButton = document.createElement('button');
-    this.container.appendChild(nameDiv);
-    nameDiv.appendChild(nameInput);
-    nameDiv.appendChild(nameButton);
+    document.querySelector('.right-container').appendChild(nameInput);
+    document.querySelector('.right-container').appendChild(nameButton);
     nameInput.setAttribute('placeholder', 'Podaj swoje imię lub ksywkę');
     nameButton.innerText = "Zapisz";
-
-    nameDiv.style.width = "500px";
-    nameDiv.style.backgroundColor = "#342A21";
-    nameDiv.style.color = "white";
-    nameDiv.style.margin = "0 auto";
-    nameDiv.style.textAlign = "center";
 
     nameButton.addEventListener(
         'click',
         () => {
             const valueFromInput = nameInput.value;
-            this.saveScore(valueFromInput, this.score);
-            location.reload(true);
+            if (valueFromInput) {
+                this.saveScore(valueFromInput, this.score);
+                location.reload(true);
+            }
         }
     );
 };
@@ -81,15 +101,11 @@ Game.prototype.makeFieldToSaveUserNameAndScore = function () {
 Game.prototype.makeFieldWithHighScores = function () {
     const div = document.createElement("div");
     const list = document.createElement('ol');
-    div.innerText = "Highest Scores:";
-    this.container.appendChild(div);
+    div.className = 'high-scores';
+    list.className = 'high-scores__list';
+    div.innerText = "Najlepsze wyniki:";
+    document.querySelector('.right-container').appendChild(div);
     div.appendChild(list);
-
-    div.style.width = "500px";
-    div.style.backgroundColor = "#342A21";
-    div.style.color = "white";
-    div.style.margin = "0 auto";
-    div.style.textAlign = "center";
 
     const highestScores = this.loadScores();
     for (let i = 0; i < highestScores.length; i++) {
@@ -99,25 +115,16 @@ Game.prototype.makeFieldWithHighScores = function () {
 
 Game.prototype.makeFieldWithScore = function () {
     const div = document.createElement("div");
-    div.style.width = "500px";
-    div.style.backgroundColor = "#342A21";
-    div.style.color = "white";
-    div.style.margin = "0 auto";
-    div.style.textAlign = "center";
-    div.innerText = `Score: ${this.score}`;
-    this.container.appendChild(div);
+    div.className = 'user-score-field';
+    div.innerText = `Twój wynik: ${this.score}`;
+    document.querySelector('.middle-container').appendChild(div);
 };
 
 Game.prototype.makeGameBoard = function () {
     const gameBoard = document.createElement("div");
-    gameBoard.style.width = "500px";
-    gameBoard.style.height = "800px";
-    gameBoard.style.backgroundColor = "#C9B79C";
-    gameBoard.style.margin = "0 auto";
-    gameBoard.style.display = 'flex';
-    gameBoard.style.flexWrap = 'wrap';
+    gameBoard.className = 'game-board';
     this.gameBoard = gameBoard;
-    this.container.appendChild(gameBoard);
+    document.querySelector('.middle-container').appendChild(gameBoard);
 };
 
 Game.prototype.startListeningArrowKeys = function () {
@@ -164,9 +171,9 @@ Game.prototype.moveLeft = function () {
 
 Game.prototype.renderCell = function (cell) {
     const cellEl = document.createElement('div');
+    cellEl.className = 'game-board-cell';
     cellEl.style.width = this.cellDimension;
     cellEl.style.height = this.cellDimension;
-    cellEl.style.textAlign = "center";
     if (cell === "h") {
         cellEl.style.backgroundColor = "#342A21";
     }
