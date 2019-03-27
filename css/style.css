@@ -270,6 +270,18 @@ opacity: 0.5;
 .teammates-item__photo-sizer{
     overflow: hidden;
 }
+
+.teammates-animate {
+    animation-name: change;
+    animation-duration: 2s;
+}
+
+@keyframes change {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+
 @media screen and (max-width: 1024px){
     .teammates {
         max-width: 90%;
