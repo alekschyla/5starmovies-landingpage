@@ -53,24 +53,16 @@ const nextSlide = () => {
 const prevSlide = () => {
     if (i === 0) {
         slides[length - 2].classList.add('carousel__slide--active');
-        setTimeout(
-            () => lastSlide.classList.remove('carousel__slide--active'),
-            TIMEOFSETTIMEOUT
-        )
+        slides[length - 2].classList.add('carousel__slide--active');
+        lastSlide.classList.remove('carousel__slide--active');
         i = length - 1;
     } else if (i === 1) {
         slides[length - 1].classList.add('carousel__slide--active');
-        setTimeout(
-            () => slides[i - 1].classList.remove('carousel__slide--active'),
-            TIMEOFSETTIMEOUT
-        )
+        slides[i - 1].classList.remove('carousel__slide--active');
         i--;
     } else {
         slides[i - 2].classList.add('carousel__slide--active');
-        setTimeout(
-            () => slides[i - 1].classList.remove('carousel__slide--active'),
-            TIMEOFSETTIMEOUT
-        )
+        slides[i - 1].classList.remove('carousel__slide--active');
         i--;
     }
 };
