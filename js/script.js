@@ -1,97 +1,109 @@
 const TIMENEXTSLIDE = 1000;
-const TIMEOFSETTIMEOUT = 500;
-let i = 1;
+
 const slides = document.querySelectorAll('.carousel__slide');
-const slide1 = document.querySelector('.slide-1');
-const lastSlide = document.querySelector('.last-slide');
-const length = slides.length;
-const carousel = document.querySelector(".hero__carousel-wrapper");
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
+let prevSlideIndex = slides.length - 1;
+let currentSlideIndex = 0;
+
 let currentIntervalId = null;
 let canIClick = true;
 
-const startInterval = () => (
-    currentIntervalId = setInterval(
-        () => {
-            nextSlide();
-        },
-        TIMENEXTSLIDE
-    )
-);
+const clearSlides = () => {
+  slides.forEach(
+    slide => {
+      slide.classList.remove('carousel__slide--active');
+      slide.classList.remove('carousel__slide--preserved');
+    }
+  );
+};
+
+const updateDisplay = () => {
+  const prevSlide = slides[prevSlideIndex];
+  const currentSlide = slides[currentSlideIndex];
+
+  clearSlides();
+
+  preserveSlide(prevSlide);
+  makeSlideActive(currentSlide);
+};
+
+const preserveSlide = (slide) => {
+  slide.classList.add('carousel__slide--preserved');
+  setTimeout(
+    () => {
+      slide.classList.remove('carousel__slide--preserved');
+    },
+    TIMENEXTSLIDE
+  );
+};
+
+const makeSlideActive = (slide) => {
+  slide.classList.add('carousel__slide--active');
+};
+
+const startInterval = () => {
+  currentIntervalId = setInterval(
+    () => {
+      nextSlide();
+    },
+    TIMENEXTSLIDE
+  );
+};
 
 const nextSlide = () => {
-    slides[i].classList.add('carousel__slide--active');
+  prevSlideIndex = currentSlideIndex;
 
-    const slideToHide = slides[i - 1];
-    const lastSlide = slides[length - 1];
+  const nextSlide = currentSlideIndex + 1;
+  if (nextSlide > slides.length - 1) {
+    currentSlideIndex = 0;
+  } else {
+    currentSlideIndex = nextSlide;
+  }
 
-    if (slideToHide) {
-        setTimeout(function () {
-            slideToHide.classList.remove('carousel__slide--active');
-        }, TIMEOFSETTIMEOUT);
-    } else {
-        setTimeout(function () {
-            lastSlide.classList.remove('carousel__slide--active');
-        }, TIMEOFSETTIMEOUT);
-    }
-
-    i++;
-
-    if (i === length) {
-        i = 0;
-    }
-    if (i === length - 1) {
-        slide1.classList.add('carousel__slide--z-index');
-    }
-    if (i === 1) {
-        slide1.classList.remove('carousel__slide--z-index');
-    }
-
+  updateDisplay();
 };
 
 const prevSlide = () => {
-    if (i === 0) {
-        slides[length - 2].classList.add('carousel__slide--active');
-        slides[length - 2].classList.add('carousel__slide--active');
-        lastSlide.classList.remove('carousel__slide--active');
-        i = length - 1;
-    } else if (i === 1) {
-        slides[length - 1].classList.add('carousel__slide--active');
-        slides[i - 1].classList.remove('carousel__slide--active');
-        i--;
-    } else {
-        slides[i - 2].classList.add('carousel__slide--active');
-        slides[i - 1].classList.remove('carousel__slide--active');
-        i--;
-    }
+  prevSlideIndex = currentSlideIndex;
+
+  const prevSlide = currentSlideIndex - 1;
+  if (prevSlide < 0) {
+    currentSlideIndex = slides.length - 1;
+  } else {
+    currentSlideIndex = prevSlide;
+  }
+
+  updateDisplay();
 };
 
+// CONTROLS
+
+document.querySelector('.prev').addEventListener("click", () => {
+  if (canIClick) {
+    prevSlide();
+    canIClick = false;
+    setTimeout(() => canIClick = true, TIMENEXTSLIDE)
+  }
+});
+
+document.querySelector('.next').addEventListener("click", () => {
+  if (canIClick) {
+    nextSlide();
+    canIClick = false;
+    setTimeout(() => canIClick = true, TIMENEXTSLIDE);
+  }
+});
+
+document.querySelector(".hero__carousel-wrapper").addEventListener("mouseenter", () => {
+  clearInterval(currentIntervalId);
+  currentIntervalId = null;
+});
+
+document.querySelector(".hero__carousel-wrapper").addEventListener("mouseleave", () => {
+  if (!currentIntervalId) {
+    startInterval();
+  }
+});
+
+// AUTO SLIDES
+
 startInterval();
-
-prev.addEventListener("click", () => {
-    if (canIClick) {
-        prevSlide();
-        canIClick = false;
-        setTimeout(() => canIClick = true, 1000);
-    }
-});
-
-next.addEventListener("click", () => {
-    if (canIClick) {
-        nextSlide();
-        canIClick = false;
-        setTimeout(() => canIClick = true, 1000);
-    }
-});
-
-carousel.addEventListener("mouseenter", () => {
-    clearInterval(currentIntervalId);
-    currentIntervalId = null;
-});
-
-carousel.addEventListener("mouseleave", () => {
-    if (!currentIntervalId) {
-        startInterval();
-    }
-});

@@ -65,15 +65,16 @@ body {
     position: absolute;
     top: 0;
     left: 100%;
-    transition: 0.5s ease-in-out;
+    transition: left 0.5s ease-in-out;
+    z-index: -100;
 }
-
 .carousel__slide--active {
     left: 0;
-    z-index: 1111;
+    z-index: 100;
 }
-.carousel__slide--z-index {
-    z-index: 2222;
+.carousel__slide--preserved {
+    left: 0;
+    z-index: 0;
 }
 .prev, .next {
     cursor: pointer;
