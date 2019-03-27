@@ -1,4 +1,4 @@
-const TIMENEXTSLIDE = 2000
+const TIMENEXTSLIDE = 1000
 
 const slides = document.querySelectorAll('.carousel__slide')
 let prevSlideIndex = slides.length - 1
@@ -9,13 +9,14 @@ let canIClick = true
 
 const clearSlides = () => {
   slides.forEach(
-    slide =>  slide.classList.remove('carousel__slide--active')
+    slide => {
+      slide.classList.remove('carousel__slide--active')
+      slide.classList.remove('carousel__slide--preserved')
+    }
   )
 }
 
 const updateDisplay = () => {
-  console.log(prevSlideIndex, currentSlideIndex)
-
   const prevSlide = slides[prevSlideIndex]
   const currentSlide = slides[currentSlideIndex]
 
@@ -34,18 +35,19 @@ const preserveSlide = (slide) => {
     TIMENEXTSLIDE
   )
 }
+
 const makeSlideActive = (slide) => {
   slide.classList.add('carousel__slide--active')
 }
 
-const startInterval = () => (
+const startInterval = () => {
   currentIntervalId = setInterval(
     () => {
       nextSlide()
     },
     TIMENEXTSLIDE
   )
-)
+}
 
 const nextSlide = () => {
   prevSlideIndex = currentSlideIndex

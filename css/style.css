@@ -66,11 +66,11 @@ body {
     top: 0;
     left: 100%;
     transition: left 0.5s ease-in-out;
+    z-index: -100;
 }
-
 .carousel__slide--active {
     left: 0;
-    z-index: 1111;
+    z-index: 100;
 }
 .carousel__slide--preserved {
     left: 0;
