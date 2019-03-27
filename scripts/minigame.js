@@ -71,7 +71,7 @@ Game.prototype.makeFieldToSaveUserNameAndScore = function () {
     nameButton.addEventListener(
         'click',
         () => {
-            const valueFromInput = document.querySelector('input').value;
+            const valueFromInput = nameInput.value;
             this.saveScore(valueFromInput, this.score);
             location.reload(true);
         }
@@ -236,10 +236,9 @@ Game.prototype.loadScores = function () {
 Game.prototype.saveScore = function (valueFromInput, score) {
     const currentScores = this.loadScores();
 
-    const newScores = currentScores.concat({ name: valueFromInput, score: score });
-
-    // newScores.sort()
-    // filter - only 10 best
+    const newScores = currentScores.concat({ name: valueFromInput, score: score })
+        .sort((a, b) => (b.score > a.score) ? 1 : (a.score === b.score) ? ((a.name > b.name) ? 1 : -1) : -1)
+        .filter((el, index) => index < 10);
 
     localStorage.setItem('scores', JSON.stringify(newScores));
 };
