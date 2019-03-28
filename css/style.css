@@ -263,7 +263,7 @@ opacity: 0.5;
     text-align: center;
 }
 .teammate-item__photo {
-    width: 90%;
+    width: 60%;
     border-radius: 30%;
 }
 
@@ -285,6 +285,9 @@ opacity: 0.5;
 @media screen and (max-width: 1024px){
     .teammates {
         max-width: 90%;
+    }
+    .teammate-item__photo {
+        width: 80%;
     }
 }
 @media screen and (max-width: 768px) {
