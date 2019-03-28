@@ -275,18 +275,18 @@ Game.prototype.checkIfOscarWasCaught = function () {
 };
 
 Game.prototype.endLevel1 = function () {
-    if (this.checkIfOscarsFell()) {
-        window.clearInterval(this.gameIntervalId);
-        console.log(this.gameIntervalId);
+    if (this.checkIfOscarsFell()) {   
+        clearInterval(this.gameIntervalId);
         this.startNextLevel(this.score,this.oscarAmountLvl2,this.gameTickLvl2);
     }
 };
 
 Game.prototype.endGame = function () {
     if (this.checkIfOscarsFell()) {
-        window.clearInterval(this.gameIntervalId);
-        console.log(this.gameIntervalId);
-
+        for (var i = 1; i < 99999; i++) {
+            window.clearInterval(i);
+        }
+        clearInterval(this.gameIntervalId);
         this.makeFieldToSaveUserNameAndScore();
     }
 };
