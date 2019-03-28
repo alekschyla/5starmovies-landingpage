@@ -2,14 +2,11 @@
 
 const sections = ['#hero', '#features', '#product-info', '#team-info', '#contact']
 
-inView.offset(450)
-
 sections.forEach(
     (sectionId) => {
         inView(sectionId) // eslint-disable-line no-undef
             .on('enter',
                 () => {
-                    console.log(sectionId)
                     const allAnchors = document.querySelectorAll('a')
                     const anchors = document.querySelectorAll('a[href="' + sectionId + '"]')
 
