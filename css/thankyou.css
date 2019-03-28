@@ -7,11 +7,7 @@
 body {
     background: url(https://paradoks.net.pl/image_files/text/25497/859caaec1584f638ba0d2918d3d3d405.jpg) repeat;
     color: #342A21;
-}
-.container {
-    position: relative;
-    width: 50%;
-    margin: 0 auto;
+    font-family: 'Exo', sans-serif;
 }
 .flex-container {
     position: absolute;
@@ -21,21 +17,58 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #71816D;
-    padding: 30px;
+    border-radius: 40px;
+    padding: 20px;
+    max-width: 50%;
     background-color: #F1E0C5;
+    box-shadow: 3px 3px 7px 5px rgb(196, 196, 196);
+}
+.logo img {
+    max-width: 100%;
 }
 .flex-item {
-    padding: 20px;
-    font-size: 25px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
 }
-.h1 {
-    font-size: 30px;
-}
-button {
-    width: 200px;
-    height: 30px;
+.button {
+    font-family: 'Exo', sans-serif;
+    padding: 8px;
+    transition: 0.5s ease-in-out;
     color: #F1E0C5;
     background-color: #71816D;
     font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #71816D;
+}
+.button:hover {
+    background-color: #F1E0C5;
+    color: #71816D;
+    border: 2px solid #71816D;
+}
+.pointer {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px){
+    .flex-container {
+        padding: 15px;
+    }
+    .flex-item {
+        padding: 8px;
+        font-size: 18px;
+    }
+    .button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .flex-item {
+        font-size: 15px;
+    }
+    .button {
+        font-size: 12px;
+        padding: 5px;
+    }
 }
