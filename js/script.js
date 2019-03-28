@@ -1,4 +1,5 @@
-const TIMENEXTSLIDE = 1000;
+const TIMENEXTSLIDE = 3000;
+const SLIDETIME = 1000;
 
 const slides = document.querySelectorAll('.carousel__slide');
 let prevSlideIndex = slides.length - 1;
@@ -81,7 +82,7 @@ document.querySelector('.prev').addEventListener("click", () => {
   if (canIClick) {
     prevSlide();
     canIClick = false;
-    setTimeout(() => canIClick = true, TIMENEXTSLIDE)
+    setTimeout(() => canIClick = true, SLIDETIME)
   }
 });
 
@@ -89,7 +90,7 @@ document.querySelector('.next').addEventListener("click", () => {
   if (canIClick) {
     nextSlide();
     canIClick = false;
-    setTimeout(() => canIClick = true, TIMENEXTSLIDE);
+    setTimeout(() => canIClick = true, SLIDETIME);
   }
 });
 
