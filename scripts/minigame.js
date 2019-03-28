@@ -1,23 +1,31 @@
 function Game(selector) {
     this.container = document.querySelector(selector) || document.body;
 
+    this.oscarAmount = 5;
+    this.gameTick = 500;
+    this.score = 0;
+
+    this.oscarAmountLvl2 = 10;
+    this.gameTickLvl2 = 300;
+    this.gameEnd = false;
+
     this.init();
 }
 
 Game.prototype.init = function () {
-    this.setInitialState();
+    this.setInitialState(this.score,this.oscarAmount,this.gameTick);
     this.render();
     this.startListeningArrowKeys();
     this.startGame();
 };
 
-Game.prototype.setInitialState = function () {
-    this.oscarAmount = 5;
+Game.prototype.setInitialState = function (score,amount,tick) {
+    this.oscarAmount = amount;
     this.gameArray = [];
     this.oscars = [];
-    this.gameTick = 500;
+    this.gameTick = tick;
     this.gameIntervalId = null;
-    this.score = 0;
+    this.score = score;
     this.delay = -3;
     this.gameBoard = null;
     this.boardDimension = 20;
@@ -45,7 +53,9 @@ Game.prototype.render = function () {
             this.renderCell(cell);
         });
     });
-    this.endGame();
+    if (this.gameEnd) {
+        this.endLevel1();
+    } else this.endGame();
 };
 
 Game.prototype.makeGameContainer = function () {
@@ -264,6 +274,14 @@ Game.prototype.checkIfOscarWasCaught = function () {
     });
 };
 
+Game.prototype.endLevel1 = function () {
+    if (this.checkIfOscarsFell()) {
+        window.clearInterval(this.gameIntervalId);
+        this.startNextLevel(this.score,this.oscarAmountLvl2,this.gameTickLvl2);
+        this.gameEnd = true;
+    }
+};
+
 Game.prototype.endGame = function () {
     if (this.checkIfOscarsFell()) {
         window.clearInterval(this.gameIntervalId);
@@ -279,4 +297,11 @@ Game.prototype.checkIfOscarsFell = function () {
         }
     }
     return ifOscarsFell;
+};
+
+Game.prototype.startNextLevel = function (score,amount,tick) {
+    this.setInitialState(score,amount,tick);
+    this.render();
+    this.startListeningArrowKeys();
+    this.startGame();
 };
