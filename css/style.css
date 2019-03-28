@@ -342,22 +342,40 @@ opacity: 0.5;
     text-align: center;
 }
 .teammate-item__photo {
-    width: 90%;
+    width: 60%;
     border-radius: 30%;
 }
 
 .teammates-item__photo-sizer{
     overflow: hidden;
 }
+
+.teammates-animate {
+    animation-name: change;
+    animation-duration: 2s;
+}
+
+@keyframes change {
+    from {transform: scale(0, 0)}
+    to {transform: scale(1, 1)}
+}
+
+
 @media screen and (max-width: 1024px){
     .teammates {
         max-width: 90%;
+    }
+    .teammate-item__photo {
+        width: 50%;
     }
 }
 @media screen and (max-width: 768px) {
     .teammates {
         flex-direction: column;
         max-width: 90%;
+    }
+    .teammates-item {
+        margin: 5px;
     }
 }
 
