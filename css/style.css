@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     width: 100%;
     background-color: #C9B79C;
@@ -24,7 +25,7 @@ input, textarea, select, button {
 .menu a {
     text-decoration: none;
     color:#C9B79C;
-}     
+}
 .menu__logo {
     max-height: 50px;
     align-items: center;
@@ -61,7 +62,7 @@ opacity: 0.5;
         height: 40px;
         font-size: 16px;
     }
-}    
+}
 
 @media (max-width: 768px){
     .main {
@@ -89,15 +90,70 @@ opacity: 0.5;
 
 /* HERO SECTION */
 .hero {
- width: 100%;
+    width: 100%;
 }
-.hero__image {
-    color: #342A21;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url("https://paradoks.net.pl/image_files/text/25497/859caaec1584f638ba0d2918d3d3d405.jpg");
-    background-size: cover;
-    background-position: center;
+
+.hero__carousel--view {
+    width: 100%;
+    height: 500px;
+    background: #C9B79C;
+    overflow: hidden;
+    position: relative;
+}
+.hero__carousel-wrapper {
+    position: relative;
+}
+
+.carousel__slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left 0.5s ease-in-out;
+    z-index: -100;
+}
+.carousel__slide--active {
+    left: 0;
+    z-index: 100;
+}
+.carousel__slide--preserved {
+    left: 0;
+    z-index: 0;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-size: 28px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 5555;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.hero__information {
+    color: white;
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    position: absolute;
+    z-index: 5555;
     text-align: center;
-    padding: 10%;
 }
 .hero__title {
     font-size: 48px;
@@ -123,18 +179,22 @@ opacity: 0.5;
     background-color: #F1E0C5;
     transition: 0.5s ease-in-out;
 }
+
 .hero__button:hover {
     color: #C9B79C;
     border: 2px solid #C9B79C;
     background: #342A21;
 }
+
 @media screen and (max-width: 768px) {
     .hero__title {
         font-size: 32px;
     }
+
     .hero__description {
         font-size: 16px;
     }
+
     .hero__button {
         font-size: 18px;
         padding: 3px;
@@ -193,32 +253,40 @@ opacity: 0.5;
     text-align: justify;
     background: #F1E0C5;
 }
+
 .product-info__info-container {
     display: flex;
 }
+
 .info-container__info {
     flex: 1;
 }
+
 .info__title {
     font-size: 24px;
     padding: 50px 50px 10px 60px;
 }
+
 .info__description {
     padding: 0 50px 50px;
     font-size: 18px;
 }
+
 .info-container__img {
     flex: 1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .info-img__feature1 {
     background-image: url("https://www.movieartarena.com/imgs/bladerunner2049ff.jpg");
 }
+
 .info-img__feature2 {
     background-image: url("https://ae01.alicdn.com/kf/HTB1cU2Ub50TMKJjSZFNq6y_1FXan/Wonder-Woman-Movie-Poster-2017-DC-Comics-Gal-Gadot-Film-Art-24x36.jpg");
 }
+
 .info-img__feature3 {
     background-image: url("https://motionpictureart.com/wp-content/uploads/2018/02/GhostBustersMoviePosterDutch1.jpg");
 }
@@ -228,6 +296,7 @@ opacity: 0.5;
         font-size: 18px;
         padding: 10px 30px 0;
     }
+
     .info__description {
         padding: 0 10px 5px;
     }
@@ -237,9 +306,11 @@ opacity: 0.5;
         display: flex;
         flex-direction: column;
     }
+
     .info__description {
         order: 1;
     }
+
     .info-container__img {
         order: 2;
         height: 300px;
@@ -293,24 +364,29 @@ opacity: 0.5;
     font-size: 18px;
     padding: 20px;
 }
+
 .premiere-form__flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
 .premiere-form__item {
     width: 60%;
     padding: 10px;
 }
+
 .premiere-form__item p {
     padding: 10px;
 }
+
 .input {
     width: 330px;
     height: 30px;
     padding-left: 5px;
 }
+
 .button {
     width: 125px;
     height: 30px;
@@ -321,9 +397,10 @@ opacity: 0.5;
     border: none;
     transition: 0.5s ease-in-out;
 }
+
 .button--green {
     background-color: #71816D;
-    color:  #F1E0C5;
+    color: #F1E0C5;
 }
 .button:hover {
     background-color: #71816D;
@@ -344,16 +421,19 @@ opacity: 0.5;
     background-color: #F1E0C5;
     padding: 30px;
 }
+
 .contact__flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+
 .contact-map {
     display: flex;
     flex-direction: column;
     width: 40%;
 }
+
 .contact-map__item {
     padding: 10px;
 }
@@ -364,10 +444,12 @@ opacity: 0.5;
     align-items: center;
     width: 40%;
 }
+
 .contact-form p {
     padding: 10px;
     text-align: center;
 }
+
 .contact-message {
     width: 100%;
     height: 150px;
@@ -382,6 +464,7 @@ opacity: 0.5;
     background-color: #342A21;
     color: #C9B79C;
 }
+
 .footer__flex-container {
     display: flex;
     flex-direction: column;
@@ -403,12 +486,14 @@ opacity: 0.5;
     text-align: center;
     padding: 5px;
 }
+
 .footer-link {
     text-decoration: none;
     text-transform: uppercase;
     color:  #C9B79C;
     padding: 5px;
 }
+
 .footer-link:hover {
     opacity: 0.5;
 }
