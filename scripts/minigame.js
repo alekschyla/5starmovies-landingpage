@@ -1,5 +1,17 @@
 function Game(selector) {
     this.container = document.querySelector(selector) || document.body;
+
+    this.init();
+}
+
+Game.prototype.init = function () {
+    this.setInitialState();
+    this.render();
+    this.startListeningArrowKeys();
+    this.startGame();
+};
+
+Game.prototype.setInitialState = function () {
     this.oscarAmount = 5;
     this.gameArray = [];
     this.oscars = [];
@@ -14,15 +26,8 @@ function Game(selector) {
         { x: 9, y: 19 },
         { x: 10, y: 19 }
     ];
-    this.init();
-}
-
-Game.prototype.init = function () {
+    
     this.oscars = this.makeOscarsArray();
-    this.score = 0;
-    this.render();
-    this.startListeningArrowKeys();
-    this.startGame();
 };
 
 Game.prototype.render = function () {
