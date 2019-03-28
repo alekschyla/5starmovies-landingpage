@@ -13,8 +13,13 @@ input, textarea, select, button {
     font-family: 'Exo', sans-serif;
 }
 
+main {
+    padding-top: 50px;
+}
+
 /* NAVIGATION */
 .menu {
+    z-index: 99999;
     position: fixed;
     width: 100%;
     display: flex;
