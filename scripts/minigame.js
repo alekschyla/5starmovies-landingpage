@@ -54,8 +54,8 @@ Game.prototype.render = function () {
         });
     });
     if (this.gameEnd) {
-        this.endLevel1();
-    } else this.endGame();
+        this.endGame();
+    } else this.endLevel1();
 };
 
 Game.prototype.makeGameContainer = function () {
@@ -277,14 +277,16 @@ Game.prototype.checkIfOscarWasCaught = function () {
 Game.prototype.endLevel1 = function () {
     if (this.checkIfOscarsFell()) {
         window.clearInterval(this.gameIntervalId);
+        console.log(this.gameIntervalId);
         this.startNextLevel(this.score,this.oscarAmountLvl2,this.gameTickLvl2);
-        this.gameEnd = true;
     }
 };
 
 Game.prototype.endGame = function () {
     if (this.checkIfOscarsFell()) {
         window.clearInterval(this.gameIntervalId);
+        console.log(this.gameIntervalId);
+
         this.makeFieldToSaveUserNameAndScore();
     }
 };
@@ -304,4 +306,5 @@ Game.prototype.startNextLevel = function (score,amount,tick) {
     this.render();
     this.startListeningArrowKeys();
     this.startGame();
+    this.gameEnd = true;
 };
