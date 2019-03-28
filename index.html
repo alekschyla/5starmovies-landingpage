@@ -15,7 +15,6 @@
     <header id="top" class="header">
         <nav class="menu">
             <img src="images/logo.png" class="menu__logo" alt="5starMovies" />
-
             <ul class="menu__list">
                 <a href="#hero" class="menu__list-item">
                     <li>strona główna</li>
@@ -37,22 +36,36 @@
     </header>
 
     <main class="main">
-        <section id="hero" class="hero">
-            <div class="hero__container">
-                <div class="hero__image">
-                    <div class="hero__information">
-                        <h1 class="hero__title">5starMovies</h1>
-                        <p class="hero__description">twoja osobista baza filmów na wyciągnięcie ręki</p>
-                        <a href="#premiere-form" class="hero__button">Zapisz się na premierę</a>
-                    </div>
+    <section id="hero" class="hero">
+        <div class="hero__carousel-wrapper">
+            <div class="hero__information">
+                <h1 class="hero__title">5starMovies</h1>
+                <p class="hero__description">twoja osobista baza filmów na wyciągnięcie ręki</p>
+                <a href="#premiere-form" class="hero__button" >Zapisz się na premierę</a>
+            </div>
+
+            <div class="hero__carousel--view">
+                <div class="carousel__slide carousel__slide--active">
+                    <img class="carousel__slide-image" src="https://images.pexels.com/photos/14675/pexels-photo-14675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                </div>
+                <div class="carousel__slide">
+                    <img class="carousel__slide-image" src="https://images.pexels.com/photos/374827/pexels-photo-374827.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                </div>
+                <div class="carousel__slide">
+                    <img class="carousel__slide-image" src="https://images.pexels.com/photos/599459/pexels-photo-599459.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                </div>
+                <div class="carousel__slide">
+                    <img class="carousel__slide-image" src="https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
                 </div>
             </div>
-        </section>
 
-        <section id="features" class="section features">
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+    </section>
 
+    <section id="features" class="section features">
             <div class="features__container">
-
                 <div class="feature-title__description">
                     <h2>funkcje</h2>
                 </div>
@@ -89,20 +102,11 @@
         <section id="product-info" class="section product-info">
             <div class="product-info__info-container">
                 <div class="info-container__info">
-                    <h3 class="info__title">Feature 1</h3>
-                    <div class="info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.
+                    <h3 class="info__title">Twoja osobista baza filmów</h3>
+                    <div class="info__description">
+                        Twoja osobista lista filmów - nie zastanawiaj sie już więcej co byś obejrzał albo co chciałeś
+                        obejrzeć. Z naszą aplikacją stworzysz swoją własną listę filmów które najbardziej byś chciał
+                        obejrzeć. Już nigdy więcej nie spędzaj wieczoru na szukaniu filmów.
                     </div>
                 </div>
                 <div class="info-container__img info-img__feature1">
@@ -113,40 +117,23 @@
                 <div class="info-container__img info-img__feature2">
                 </div>
                 <div class="info-container__info">
-                    <h3 class="info__title">Feature 2</h3>
-                    <div class="info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.
+                    <h3 class="info__title">Oceniaj filmy</h3>
+                    <div class="info__description">
+                        Wystawiaj oceny i opinie każdemu obejrzanemu filmowi lub serialowi. Oceniaj pozycje za pomocą
+                        gwiazdek od 1 do 5. Najlepiej ocenione
+                        dodawaj do listy ulubionych filmów i seriali, by wiedzieć do czego chcesz wrócić w przyszłości.
                     </div>
                 </div>
             </div>
 
             <div class="product-info__info-container">
                 <div class="info-container__info">
-                    <h3 class="info__title">Feature 3</h3>
-                    <div class="info__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua.
+                    <h3 class="info__title">Dziel się ze znajomymi</h3>
+                    <div class="info__description">
+                        Bądź jeszcze bliżej ze swoimi przyjaciółmi. Dziel się z nimi swoją listą filmów i seriali do
+                        obejrzenia, jak również wystawionymi im ocenami. Udostępniaj je kilkoma kliknięciami na
+                        facebooku, pokaż co lubisz i co właśnie oglądasz.
+
                     </div>
                 </div>
                 <div class="info-container__img info-img__feature3">
@@ -193,7 +180,8 @@
                 <div class="premiere-form__item">
                     <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
                         <input type="hidden" name="subject" value="Zapraszamy na premierę aplikacji">
-                        <input type="hidden" name="message" value="Zapraszamy na premierę aplikacji w dniu 31/12/3112.">
+                        <input type="hidden" name="message"
+                            value="Witamy!<br>Własnie zapisałaś/eś się na premierę naszej aplikacji 5StarMovies.<br>Powiadomimy Cię niezwłocznie o premierze aplikacji, gdy tylko będzie dostępna.<br>W międzyczasie, w podziękowaniu za pozostawienie e-maila, przygotowaliśmy dla Ciebie niespodziankę - grę w łapanie spadających Oscarów!<br><a href='http://5starsmovies.jfddl7.is-academy.pl/minigame.html'>Zagraj teraz!</a><br><br>Pozdrawiamy,<br>Zespół <a href='http://5starsmovies.jfddl7.is-academy.pl'>5StarMovies</a>">
                         <input type="hidden" name="from" value="5starMovies@example.com">
                         <input type="hidden" name="fromName" value="5starMovies">
                         <input type="hidden" name="redirect"
@@ -213,10 +201,10 @@
             <div class="contact__flex-container">
                 <div class="contact-map">
                     <h2 class="contact-map__item">Kontakt</h2>
-                    <p class="contact-map__item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolor nisi
-                        adipisci repudiandae,
-                        error odio maiores eius perferendis accusamus esse eos labore distinctio facere doloremque cum
-                        culpa consectetur aliquam recusandae.</p>
+                    <p class="contact-map__item">infoShareAcademy</p>
+                    <p class="contact-map__item">Męczenników Majdanka 181</p>
+                    <p class="contact-map__item">20-325 Lublin</p>
+                    <p class="contact-map__item">tel. 666-666-666</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1767.1698000135618!2d22.633483850338283!3d51.21621107460572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472257458ad7b011%3A0xafda8023fdc17b70!2sFundacja+Rozwoju+Lubelszczyzny!5e0!3m2!1sen!2spl!4v1551972931591"
                         width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -263,6 +251,25 @@
 
     <script rel="script" src="scripts/script.js"></script>
 
+<!-- Cookie Consent -->
+    <div id="simplecookienotification_v01"
+        style="display: block; z-index: 99999; min-height: 35px; width: 300px; position: fixed; background: rgb(239, 235, 233); border: 0px rgb(121, 85, 72); text-align: center; color: rgb(119, 119, 119); border-radius: 15px; box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px 0px; bottom: 10px; right: 10px;">
+        <div style="padding:10px; margin-left:15px; margin-right:15px; font-size:14px; font-weight:normal;">
+            <span id="simplecookienotification_v01_powiadomienie">Używamy cookies w celach funkcjonalnych, aby ułatwić
+                użytkownikom korzystanie z witryny oraz w celu tworzenia anonimowych statystyk serwisu. Jeżeli nie
+                blokujesz plików cookies, to zgadzasz się na ich używanie oraz zapisanie w pamięci
+                urządzenia.</span>
+            <div id="jwc_hr1" style="height: 10px; display: block;"></div>
+            <a id="okbutton"
+                href="javascript:simplecookienotification_v01_create_cookie('simplecookienotification_v01',1,7);"
+                style="position: relative; background: rgb(121, 85, 72); color: rgb(255, 255, 255); padding: 5px 15px; text-decoration: none; font-size: 12px; font-weight: normal; border: 0px solid rgb(239, 235, 233); border-radius: 5px;">ROZUMIEM</a>
+            <div id="jwc_hr2" style="height: 10px; display: block;"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function simplecookienotification_v01_create_cookie(name, value, days) { if (days) { var date = new Date(); date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); var expires = "; expires=" + date.toGMTString(); } else var expires = ""; document.cookie = name + "=" + value + expires + "; path=/"; document.getElementById("simplecookienotification_v01").style.display = "none"; } function simplecookienotification_v01_read_cookie(name) { var nameEQ = name + "="; var ca = document.cookie.split(";"); for (var i = 0; i < ca.length; i++) { var c = ca[i]; while (c.charAt(0) == " ") c = c.substring(1, c.length); if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length); } return null; } var simplecookienotification_v01_jest = simplecookienotification_v01_read_cookie("simplecookienotification_v01"); if (simplecookienotification_v01_jest == 1) { document.getElementById("simplecookienotification_v01").style.display = "none"; }
+    </script>
+<!-- End Cookie Consent -->
 </body>
 
 </html>
