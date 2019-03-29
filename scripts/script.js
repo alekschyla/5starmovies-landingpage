@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // SLIDER
 const TIMENEXTSLIDE = 3000;
 const SLIDETIME = 1000;
@@ -120,7 +118,7 @@ const teammatesContainer = document.querySelector('.teammates');
 const teammatesPhotos = document.querySelectorAll('.teammate-item__photo');
 const teammatesContainerHeight = teammatesContainer.clientHeight;
 
-function inView() {
+function isElementInViev() {
     const windowHeight = window.innerHeight;
     const scrollY = window.scrollY || window.pageYOffset;
     const scrollPosition = scrollY + windowHeight;
@@ -129,10 +127,9 @@ function inView() {
 }
 
 function animate() {
-    if (inView()) {
+    if (isElementInViev()) {
         teammatesPhotos.forEach(photo => photo.classList.add('teammates-animate'))
     }
 }
 
 document.addEventListener('scroll', animate);
->>>>>>> develop

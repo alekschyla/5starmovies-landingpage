@@ -23,7 +23,13 @@ const highlighVisibleSection = () =>{
         }
     )
 
-    highlighSection(visibleSections[0])
+    const indexOfContact = visibleSections.indexOf('#contact')
+
+    if(indexOfContact === -1){
+        highlighSection(visibleSections[0])
+    }else{
+        highlighSection(visibleSections[indexOfContact])
+    }
 } 
 
 window.addEventListener(
