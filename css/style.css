@@ -286,15 +286,15 @@ opacity: 0.5;
 }
 
 .info-img__feature1 {
-    background-image: url("https://www.movieartarena.com/imgs/bladerunner2049ff.jpg");
+    background-image: url("../images/feature1.jpg");
 }
 
 .info-img__feature2 {
-    background-image: url("https://ae01.alicdn.com/kf/HTB1cU2Ub50TMKJjSZFNq6y_1FXan/Wonder-Woman-Movie-Poster-2017-DC-Comics-Gal-Gadot-Film-Art-24x36.jpg");
+    background-image: url("../images/feature2.jpg");
 }
 
 .info-img__feature3 {
-    background-image: url("https://motionpictureart.com/wp-content/uploads/2018/02/GhostBustersMoviePosterDutch1.jpg");
+    background-image: url("../images/feature3.jpg");
 }
 
 @media screen and (max-width: 1024px) {
