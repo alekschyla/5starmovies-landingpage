@@ -78,8 +78,8 @@ Game.prototype.makeGameContainer = function () {
 
 Game.prototype.makeFieldWithGameInstructions = function () {
     const instructionsDiv = document.createElement('div');
-    const h1 = document.createElement('h1');
-    h1.innerText = 'Łap spadające Oskary!';
+    const h2 = document.createElement('h2');
+    h2.innerText = 'Łap spadające Oskary!';
     const par1 = document.createElement('p');
     par1.innerText = `Za każdy złapany Oskar dostaniesz 1 punkt.
     Na drugim poziomie gry Oskary spadają szybciej, więc spiesz się, aby je złapać!
@@ -90,7 +90,7 @@ Game.prototype.makeFieldWithGameInstructions = function () {
     par3.innerText = `Aby rozpocząć grę, naciśnij klawisz Enter.`;
 
     document.querySelector('.left-container').appendChild(instructionsDiv);
-    instructionsDiv.appendChild(h1);
+    instructionsDiv.appendChild(h2);
     instructionsDiv.appendChild(par1);
     instructionsDiv.appendChild(par2);
     instructionsDiv.appendChild(par3);
@@ -202,18 +202,20 @@ Game.prototype.renderCell = function (cell) {
     cellEl.className = 'game-board-cell';
     cellEl.style.width = this.cellDimension;
     cellEl.style.height = this.cellDimension;
-    if (cell === "h") {
-        cellEl.style.backgroundColor = "#342A21";
+    if (cell === "h1") {
+        cellEl.className = "hand-cell-left game-board-cell";
+    }if (cell === "h2") {
+        cellEl.className = "hand-cell-right game-board-cell";
     }
     if (cell === "o") {
-        cellEl.innerHTML = "<img src='./images/oscar.png'/>";
+        cellEl.className = "oscar-cell game-board-cell";
     }
     this.gameBoard.appendChild(cellEl);
 };
 
 Game.prototype.placeHand = function () {
-    this.gameArray[this.handPosition[0].y][this.handPosition[0].x] = 'h';
-    this.gameArray[this.handPosition[1].y][this.handPosition[1].x] = 'h';
+    this.gameArray[this.handPosition[0].y][this.handPosition[0].x] = 'h1';
+    this.gameArray[this.handPosition[1].y][this.handPosition[1].x] = 'h2';
 };
 
 Game.prototype.makeOscarsArray = function () {
