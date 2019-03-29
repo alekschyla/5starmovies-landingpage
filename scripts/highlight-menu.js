@@ -14,24 +14,24 @@ const highlighSection = (sectionId) => {
 
 const sections = ['#hero', '#features', '#product-info', '#team-info', '#contact']
 
+const highlighVisibleSection = () =>{
+    const visibleSections = sections.filter(
+        (sectionId) => {
+            const section = document.querySelector(sectionId)
+
+            return inView.is(section)
+        }
+    )
+
+    highlighSection(visibleSections[0])
+} 
 
 window.addEventListener(
     'scroll',
-    (e) => {
-        const visibleSections = sections.filter(
-            (sectionId) => {
-                const section = document.querySelector(sectionId)
-
-                return inView.is(section)
-            }
-        )
-
-        highlighSection(visibleSections[0])
-
-    }
+    highlighVisibleSection
 )
-//
 
-
-// 
-
+window.addEventListener(
+    'load',
+    highlighVisibleSection
+)
