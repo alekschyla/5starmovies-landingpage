@@ -88,12 +88,18 @@ Game.prototype.makeFieldWithGameInstructions = function () {
     par2.innerText = `Użyj klawiszy <- -> do poruszania się w lewo i prawo.`;
     const par3 = document.createElement('p');
     par3.innerText = `Aby rozpocząć grę, naciśnij klawisz Enter.`;
+    const link = document.createElement('a');
+    link.setAttribute('href','../index.hthml');
+    const h6 = document.createElement('h6');
+    h6.innerText = 'Powrót do strony głównej';
 
     document.querySelector('.left-container').appendChild(instructionsDiv);
     instructionsDiv.appendChild(h2);
     instructionsDiv.appendChild(par1);
     instructionsDiv.appendChild(par2);
     instructionsDiv.appendChild(par3);
+    instructionsDiv.appendChild(link);
+    link.appendChild(h6);
 };
 
 Game.prototype.makeGameBoardArray = function () {

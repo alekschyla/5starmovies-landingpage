@@ -6,7 +6,9 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: #C9B79C;
+    margin: 0;
+    padding: 0;
+    background: #C9B79C url('../images/oscar-background.png') repeat;
     font-family: 'Exo', sans-serif;
 }
 input, textarea, select, button {
@@ -17,6 +19,7 @@ input, textarea, select, button {
     display: flex;
     flex-direction: row;
     font-size: 20px;
+    border-bottom: 10px solid #342A21;
 }
 .left-container {
     display: flex;
@@ -28,6 +31,13 @@ input, textarea, select, button {
     padding: 20px;
     color: white;
     background-color: #342A21;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: #C9B79C;
 }
 .middle-container {
     width: auto;
