@@ -163,13 +163,13 @@ opacity: 0.5;
 }
 .hero__title {
     font-size: 48px;
-    text-shadow: 3px 3px 2px #F1E0C5;
+    text-shadow: 2px 2px 4px #342A21;
 }
 .hero__description {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    text-shadow: 3px 3px 2px #F1E0C5;
+    text-shadow: 2px 2px 4px #342A21;
 }
 .hero__button{
     display: block;
@@ -182,13 +182,13 @@ opacity: 0.5;
     border: 2px solid #342A21;
     border-radius: 5px;
     text-decoration: none;
-    background-color: #F1E0C5;
+    background-color: white;
     transition: 0.5s ease-in-out;
 }
 
 .hero__button:hover {
-    color: #C9B79C;
-    border: 2px solid #C9B79C;
+    color: white;
+    border: 2px solid white;
     background: #342A21;
 }
 
