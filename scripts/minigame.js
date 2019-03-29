@@ -64,8 +64,22 @@ Game.prototype.makeGameContainer = function () {
 
 Game.prototype.makeFieldWithGameInstructions = function () {
     const instructionsDiv = document.createElement('div');
-    instructionsDiv.innerText = 'Instrukcja do gry';
+    const h1 = document.createElement('h1');
+    h1.innerText = 'Łap spadające Oskary!';
+    const par1 = document.createElement('p');
+    par1.innerText = `Za każdy złapany Oskar dostaniesz 1 punkt.
+    Na drugim poziomie gry Oskary spadają szybciej, więc spiesz się, aby je złapać!
+    Po zakończeniu gry możesz zapisać swój wynik i spróbować od nowa.`;
+    const par2 = document.createElement('p');
+    par2.innerText = `Użyj klawiszy <- -> do poruszania się w lewo i prawo.`;
+    const par3 = document.createElement('p');
+    par3.innerText = `Aby rozpocząć grę, naciśnij klawisz Enter.`;
+
     document.querySelector('.left-container').appendChild(instructionsDiv);
+    instructionsDiv.appendChild(h1);
+    instructionsDiv.appendChild(par1);
+    instructionsDiv.appendChild(par2);
+    instructionsDiv.appendChild(par3);
 };
 
 Game.prototype.makeGameBoardArray = function () {
