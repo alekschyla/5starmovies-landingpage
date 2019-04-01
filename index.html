@@ -14,57 +14,61 @@
 
     <header id="top" class="header">
         <nav class="menu">
-            <img src="images/logo.png" class="menu__logo" alt="5starMovies" />
-            <ul class="menu__list">
-                <a href="#hero" class="menu__list-item">
-                    <li>strona główna</li>
-                </a>
-                <a href="#features" class="menu__list-item">
-                    <li>funkcje</li>
-                </a>
-                <a href="#product-info" class="menu__list-item">
-                    <li>więcej</li>
-                </a>
-                <a href="#team-info" class="menu__list-item">
-                    <li>o zespole</li>
-                </a>
-                <a href="#contact" class="menu__list-item">
-                    <li>kontakt</li>
-                </a>
-            </ul>
+            <div class="menu__div menu__div-logo">
+                <img src="images/logo.png" class="menu__logo" alt="5starMovies" />
+            </div>
+            <div class="menu__div menu__div-list">
+                <ul class="menu__list">
+                    <a href="#hero" class="menu__list-item">
+                        <li>strona główna</li>
+                    </a>
+                    <a href="#features" class="menu__list-item">
+                        <li>funkcje</li>
+                    </a>
+                    <a href="#product-info" class="menu__list-item">
+                        <li>więcej</li>
+                    </a>
+                    <a href="#team-info" class="menu__list-item">
+                        <li>o zespole</li>
+                    </a>
+                    <a href="#contact" class="menu__list-item">
+                        <li>kontakt</li>
+                    </a>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main class="main">
-    <section id="hero" class="hero">
-        <div class="hero__carousel-wrapper">
-            <div class="hero__information">
-                <h1 class="hero__title">5StarMovies</h1>
-                <p class="hero__description">twoja osobista baza filmów na wyciągnięcie ręki</p>
-                <a href="#premiere-form" class="hero__button" >Zapisz się na premierę</a>
+        <section id="hero" class="hero">
+            <div class="hero__carousel-wrapper">
+                <div class="hero__information">
+                    <h1 class="hero__title">5StarMovies</h1>
+                    <p class="hero__description">twoja osobista baza filmów na wyciągnięcie ręki</p>
+                    <a href="#premiere-form" class="hero__button">Zapisz się na premierę</a>
+                </div>
+
+                <div class="hero__carousel--view">
+                    <div class="carousel__slide carousel__slide--active">
+                        <img class="carousel__slide-image" src="images/hero1.jpg">
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="carousel__slide-image" src="images/hero2.jpg">
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="carousel__slide-image" src="images/hero3.jpg">
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="carousel__slide-image" src="images/hero4.jpg">
+                    </div>
+                </div>
+
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
             </div>
+        </section>
 
-            <div class="hero__carousel--view">
-                <div class="carousel__slide carousel__slide--active">
-                    <img class="carousel__slide-image" src="images/hero1.jpg">
-                </div>
-                <div class="carousel__slide">
-                    <img class="carousel__slide-image" src="images/hero2.jpg">
-                </div>
-                <div class="carousel__slide">
-                    <img class="carousel__slide-image" src="images/hero3.jpg">
-                </div>
-                <div class="carousel__slide">
-                    <img class="carousel__slide-image" src="images/hero4.jpg">
-                </div>
-            </div>
-
-            <a class="prev">&#10094;</a>
-            <a class="next">&#10095;</a>
-        </div>
-    </section>
-
-    <section id="features" class="section features">
+        <section id="features" class="section features">
             <div class="features__container">
                 <div class="feature-title__description">
                     <h2>funkcje</h2>
@@ -181,11 +185,10 @@
                     <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
                         <input type="hidden" name="subject" value="Zapraszamy na premierę aplikacji">
                         <input type="hidden" name="message"
-                            value="Witamy!<br>Własnie zapisałaś/eś się na premierę naszej aplikacji 5StarMovies.<br>Powiadomimy Cię niezwłocznie o premierze aplikacji, gdy tylko będzie dostępna.<br>W międzyczasie, w podziękowaniu za pozostawienie e-maila, przygotowaliśmy dla Ciebie niespodziankę - grę w łapanie spadających Oscarów!<br><a href='http://5starsmovies.jfddl7.is-academy.pl/minigame.html'>Zagraj teraz!</a><br><br>Pozdrawiamy,<br>Zespół <a href='http://5starsmovies.jfddl7.is-academy.pl'>5StarMovies</a>">
+                            value="Witamy!<br>Własnie zapisałaś/eś się na premierę naszej aplikacji 5StarMovies.<br>Powiadomimy Cię niezwłocznie o premierze aplikacji, gdy tylko będzie dostępna.<br>W międzyczasie, w podziękowaniu za pozostawienie e-maila, przygotowaliśmy dla Ciebie niespodziankę - grę w łapanie spadających Oscarów!<br><a href='http://5starmovies.jfddl7.is-academy.pl/minigame.html'>Zagraj teraz!</a><br><br>Pozdrawiamy,<br>Zespół <a href='http://5starmovies.jfddl7.is-academy.pl'>5StarMovies</a>">
                         <input type="hidden" name="from" value="5starMovies@example.com">
                         <input type="hidden" name="fromName" value="5starMovies">
-                        <input type="hidden" name="redirect"
-                            value="http://5starsmovies.jfddl7.is-academy.pl/thankyou.html">
+                        <input type="hidden" name="redirect" value="./thankyou.html">
                         <p><input id="e-mail-p" class="input" name="emails[]" type="email"
                                 placeholder="Podaj swój adres e-mail" required /></p>
                         <p><input id="checkbox" name="checkbox" type="checkbox" required />
@@ -223,8 +226,7 @@
                                 placeholder="Tu wpisz swoją wiadomość"></textarea></p>
                         <p><input id="submit-contact" class="button button--green pointer" type="submit"
                                 value="Wyślij" /></p>
-                        <input type="hidden" name="redirect"
-                            value="http://5starsmovies.jfddl7.is-academy.pl/index.html">
+                        <input type="hidden" name="redirect" value="./index.html">
                     </form>
                 </div>
             </div>
@@ -251,7 +253,7 @@
 
     <script rel="script" src="scripts/script.js"></script>
 
-<!-- Cookie Consent -->
+    <!-- Cookie Consent -->
     <div id="simplecookienotification_v01"
         style="display: block; z-index: 99999; min-height: 35px; width: 300px; position: fixed; background: rgb(239, 235, 233); border: 0px rgb(121, 85, 72); text-align: center; color: rgb(119, 119, 119); border-radius: 15px; box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px 0px; bottom: 10px; right: 10px;">
         <div style="padding:10px; margin-left:15px; margin-right:15px; font-size:14px; font-weight:normal;">
@@ -269,7 +271,7 @@
     <script type="text/javascript">
         function simplecookienotification_v01_create_cookie(name, value, days) { if (days) { var date = new Date(); date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); var expires = "; expires=" + date.toGMTString(); } else var expires = ""; document.cookie = name + "=" + value + expires + "; path=/"; document.getElementById("simplecookienotification_v01").style.display = "none"; } function simplecookienotification_v01_read_cookie(name) { var nameEQ = name + "="; var ca = document.cookie.split(";"); for (var i = 0; i < ca.length; i++) { var c = ca[i]; while (c.charAt(0) == " ") c = c.substring(1, c.length); if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length); } return null; } var simplecookienotification_v01_jest = simplecookienotification_v01_read_cookie("simplecookienotification_v01"); if (simplecookienotification_v01_jest == 1) { document.getElementById("simplecookienotification_v01").style.display = "none"; }
     </script>
-<!-- End Cookie Consent -->
+    <!-- End Cookie Consent -->
 </body>
 
 </html>
