@@ -57,6 +57,7 @@ main {
     background-color: #C9B79C;
 }
 
+
 .menu__list {
     display: flex;
     flex-grow: 5;
@@ -75,13 +76,21 @@ main {
     flex-grow: 1;
 }
 
+.menu-active {
+background-color:  #564536;
+transition: 0.5s ease-in-out;
+}
+
 .menu__list-item:hover {
-opacity: 0.5;
+    color: #F6C775;
+    transition: 0.5s ease-in-out;
 }
 
 @media (max-width: 1024px) {
     .menu__list-item{
-        height: 40px;
+        display: flex;
+        align-items: center;
+        height: 50px;
         font-size: 16px;
     }
     .menu__div-logo {

@@ -200,7 +200,7 @@
             </div>
         </section>
 
-        <section id="contact" class="section contact">
+        <section class="section contact">
             <div class="contact__flex-container">
                 <div class="contact-map">
                     <h2 class="contact-map__item">Kontakt</h2>
@@ -233,7 +233,8 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <!-- @HACK id=contact added to footer, otherwise highlight contact in menu did't worked when in view-->
+    <footer id="contact" class="footer">
 
         <div class="footer__flex-container">
             <div class="footer__license">Icons made by <a class="footer-link" href="https://www.freepik.com/"
@@ -252,6 +253,7 @@
     </footer>
 
     <script rel="script" src="scripts/script.js"></script>
+    <script rel="script" src="scripts/highlight-menu.js"></script>
 
     <!-- Cookie Consent -->
     <div id="simplecookienotification_v01"
