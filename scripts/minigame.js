@@ -89,7 +89,7 @@ Game.prototype.makeFieldWithGameInstructions = function () {
     const par2 = document.createElement('p');
     par2.innerText = `Użyj klawiszy <- -> do poruszania się w lewo i prawo.`;
     const par3 = document.createElement('p');
-    par3.innerText = `Aby rozpocząć grę, naciśnij klawisz Enter.`;
+    par3.innerText = `Aby rozpocząć poziom, naciśnij klawisz Enter.`;
     const link = document.createElement('a');
     link.setAttribute('href','../index.hthml');
     const button = document.createElement('button');
