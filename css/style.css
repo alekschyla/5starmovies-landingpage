@@ -7,6 +7,7 @@
 body {
     width: 100%;
     background-color: #C9B79C;
+    color: #342A21;
     font-family: 'Exo', sans-serif;
 }
 input, textarea, select, button {
@@ -163,13 +164,13 @@ opacity: 0.5;
 }
 .hero__title {
     font-size: 48px;
-    text-shadow: 3px 3px 2px #F1E0C5;
+    text-shadow: 2px 2px 4px #342A21;
 }
 .hero__description {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
-    text-shadow: 3px 3px 2px #F1E0C5;
+    text-shadow: 2px 2px 4px #342A21;
 }
 .hero__button{
     display: block;
@@ -182,13 +183,13 @@ opacity: 0.5;
     border: 2px solid #342A21;
     border-radius: 5px;
     text-decoration: none;
-    background-color: #F1E0C5;
+    background-color: white;
     transition: 0.5s ease-in-out;
 }
 
 .hero__button:hover {
-    color: #C9B79C;
-    border: 2px solid #C9B79C;
+    color: white;
+    border: 2px solid white;
     background: #342A21;
 }
 
@@ -286,15 +287,15 @@ opacity: 0.5;
 }
 
 .info-img__feature1 {
-    background-image: url("https://www.movieartarena.com/imgs/bladerunner2049ff.jpg");
+    background-image: url("../images/feature1.jpg");
 }
 
 .info-img__feature2 {
-    background-image: url("https://ae01.alicdn.com/kf/HTB1cU2Ub50TMKJjSZFNq6y_1FXan/Wonder-Woman-Movie-Poster-2017-DC-Comics-Gal-Gadot-Film-Art-24x36.jpg");
+    background-image: url("../images/feature2.jpg");
 }
 
 .info-img__feature3 {
-    background-image: url("https://motionpictureart.com/wp-content/uploads/2018/02/GhostBustersMoviePosterDutch1.jpg");
+    background-image: url("../images/feature3.jpg");
 }
 
 @media screen and (max-width: 1024px) {
