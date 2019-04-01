@@ -37,11 +37,6 @@ main {
     align-self: center;
 }
 
-.menu-active{
-    border: 2px solid#C9B79C;
-    border-radius: 5px;
-    background-color: #342A21;
-}
 
 .menu__list {
     display: flex;
@@ -65,15 +60,19 @@ main {
 }
 
 .menu__list-item:hover {
-    border: 2px solid#C9B79C;
-    border-radius: 5px;
-    background-color: #342A21;
-
+    opacity: 0.6;
+    transition: 0.5s ease-in-out;
+}
+.menu-active {
+    opacity: 0.6;
+    transition: 0.5s ease-in-out;
 }
 
 @media (max-width: 1024px) {
     .menu__list-item{
-        height: 40px;
+        display: flex;
+        align-items: center;
+        height: 50px;
         font-size: 16px;
     }
 }
