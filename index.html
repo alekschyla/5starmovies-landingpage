@@ -14,48 +14,53 @@
 
     <header id="top" class="header">
         <nav class="menu">
-            <img src="images/logo.png" class="menu__logo" alt="5starMovies" />
-            <ul class="menu__list">
-                <a href="#hero" class="menu__list-item">
-                    <li>strona główna</li>
-                </a>
-                <a href="#features" class="menu__list-item">
-                    <li>funkcje</li>
-                </a>
-                <a href="#product-info" class="menu__list-item">
-                    <li>więcej</li>
-                </a>
-                <a href="#team-info" class="menu__list-item">
-                    <li>o zespole</li>
-                </a>
-                <a href="#contact" class="menu__list-item">
-                    <li>kontakt</li>
-                </a>
-            </ul>
+            <div class="menu__div menu__div-logo">
+                <img src="images/logo.png" class="menu__logo" alt="5starMovies" />
+            </div>
+            <div class="menu__div menu__div-list">
+                <ul class="menu__list">
+                    <a href="#hero" class="menu__list-item">
+                        <li>strona główna</li>
+                    </a>
+                    <a href="#features" class="menu__list-item">
+                        <li>funkcje</li>
+                    </a>
+                    <a href="#product-info" class="menu__list-item">
+                        <li>więcej</li>
+                    </a>
+                    <a href="#team-info" class="menu__list-item">
+                        <li>o zespole</li>
+                    </a>
+                    <a href="#contact" class="menu__list-item">
+                        <li>kontakt</li>
+                    </a>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main class="main">
-    <section id="hero" class="hero">
-        <div class="hero__carousel-wrapper">
-            <div class="hero__information">
-                <h1 class="hero__title">5StarMovies</h1>
-                <p class="hero__description">twoja osobista baza filmów na wyciągnięcie ręki</p>
-                <a href="#premiere-form" class="hero__button" >Zapisz się na premierę</a>
-            </div>
+        <section id="hero" class="hero">
+            <div class="hero__carousel-wrapper">
+                <div class="hero__information">
+                    <h1 class="hero__title">5StarMovies</h1>
+                    <p class="hero__description">twoja osobista baza filmów na wyciągnięcie ręki</p>
+                    <a href="#premiere-form" class="hero__button">Zapisz się na premierę</a>
+                </div>
 
-            <div class="hero__carousel--view">
-                <div class="carousel__slide carousel__slide--active">
-                    <img class="carousel__slide-image" src="images/hero1.jpg">
-                </div>
-                <div class="carousel__slide">
-                    <img class="carousel__slide-image" src="images/hero2.jpg">
-                </div>
-                <div class="carousel__slide">
-                    <img class="carousel__slide-image" src="images/hero3.jpg">
-                </div>
-                <div class="carousel__slide">
-                    <img class="carousel__slide-image" src="images/hero4.jpg">
+                <div class="hero__carousel--view">
+                    <div class="carousel__slide carousel__slide--active">
+                        <img class="carousel__slide-image" src="images/hero1.jpg">
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="carousel__slide-image" src="images/hero2.jpg">
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="carousel__slide-image" src="images/hero3.jpg">
+                    </div>
+                    <div class="carousel__slide">
+                        <img class="carousel__slide-image" src="images/hero4.jpg">
+                    </div>
                 </div>
 
                 <a class="prev">&#10094;</a>
@@ -180,11 +185,10 @@
                     <form action="https://emaillabs-sender.herokuapp.com/" method="POST">
                         <input type="hidden" name="subject" value="Zapraszamy na premierę aplikacji">
                         <input type="hidden" name="message"
-                            value="Witamy!<br>Własnie zapisałaś/eś się na premierę naszej aplikacji 5StarMovies.<br>Powiadomimy Cię niezwłocznie o premierze aplikacji, gdy tylko będzie dostępna.<br>W międzyczasie, w podziękowaniu za pozostawienie e-maila, przygotowaliśmy dla Ciebie niespodziankę - grę w łapanie spadających Oscarów!<br><a href='http://5starsmovies.jfddl7.is-academy.pl/minigame.html'>Zagraj teraz!</a><br><br>Pozdrawiamy,<br>Zespół <a href='http://5starsmovies.jfddl7.is-academy.pl'>5StarMovies</a>">
+                            value="Witamy!<br>Własnie zapisałaś/eś się na premierę naszej aplikacji 5StarMovies.<br>Powiadomimy Cię niezwłocznie o premierze aplikacji, gdy tylko będzie dostępna.<br>W międzyczasie, w podziękowaniu za pozostawienie e-maila, przygotowaliśmy dla Ciebie niespodziankę - grę w łapanie spadających Oscarów!<br><a href='http://5starmovies.jfddl7.is-academy.pl/minigame.html'>Zagraj teraz!</a><br><br>Pozdrawiamy,<br>Zespół <a href='http://5starmovies.jfddl7.is-academy.pl'>5StarMovies</a>">
                         <input type="hidden" name="from" value="5starMovies@example.com">
                         <input type="hidden" name="fromName" value="5starMovies">
-                        <input type="hidden" name="redirect"
-                            value="http://5starsmovies.jfddl7.is-academy.pl/thankyou.html">
+                        <input type="hidden" name="redirect" value="./thankyou.html">
                         <p><input id="e-mail-p" class="input" name="emails[]" type="email"
                                 placeholder="Podaj swój adres e-mail" required /></p>
                         <p><input id="checkbox" name="checkbox" type="checkbox" required />
@@ -222,8 +226,7 @@
                                 placeholder="Tu wpisz swoją wiadomość"></textarea></p>
                         <p><input id="submit-contact" class="button button--green pointer" type="submit"
                                 value="Wyślij" /></p>
-                        <input type="hidden" name="redirect"
-                            value="http://5starsmovies.jfddl7.is-academy.pl/index.html">
+                        <input type="hidden" name="redirect" value="./index.html">
                     </form>
                 </div>
             </div>

@@ -83,7 +83,7 @@ document.querySelector('.prev').addEventListener("click", () => {
     if (canIClick) {
         prevSlide();
         canIClick = false;
-        setTimeout(() => canIClick = true, SLIDETIME)
+        setTimeout(() => canIClick = true, SLIDETIME);
     }
 });
 
@@ -118,7 +118,7 @@ const teammatesContainer = document.querySelector('.teammates');
 const teammatesPhotos = document.querySelectorAll('.teammate-item__photo');
 const teammatesContainerHeight = teammatesContainer.clientHeight;
 
-function isElementInViev() {
+function isElementInView() {
     const windowHeight = window.innerHeight;
     const scrollY = window.scrollY || window.pageYOffset;
     const scrollPosition = scrollY + windowHeight;
@@ -127,8 +127,8 @@ function isElementInViev() {
 }
 
 function animate() {
-    if (isElementInViev()) {
-        teammatesPhotos.forEach(photo => photo.classList.add('teammates-animate'))
+    if (isElementInView()) {
+        teammatesPhotos.forEach(photo => photo.classList.add('teammates-animate'));
     }
 }
 
