@@ -45,6 +45,7 @@ Game.prototype.render = function () {
     this.makeFieldWithScore();
     this.makeGameBoardArray();
     this.makeGameBoard();
+    this.makeFieldWithLevel();
     this.placeHand();
     this.renderOscar();
     this.gameArray.forEach(row => {
@@ -90,8 +91,8 @@ Game.prototype.makeFieldWithGameInstructions = function () {
     par3.innerText = `Aby rozpocząć grę, naciśnij klawisz Enter.`;
     const link = document.createElement('a');
     link.setAttribute('href','../index.hthml');
-    const h6 = document.createElement('h6');
-    h6.innerText = 'Powrót do strony głównej';
+    const button = document.createElement('button');
+    button.innerText = 'Powrót do strony głównej';
 
     document.querySelector('.left-container').appendChild(instructionsDiv);
     instructionsDiv.appendChild(h2);
@@ -99,7 +100,7 @@ Game.prototype.makeFieldWithGameInstructions = function () {
     instructionsDiv.appendChild(par2);
     instructionsDiv.appendChild(par3);
     instructionsDiv.appendChild(link);
-    link.appendChild(h6);
+    link.appendChild(button);
 };
 
 Game.prototype.makeGameBoardArray = function () {
@@ -117,7 +118,7 @@ Game.prototype.makeFieldToSaveUserNameAndScore = function () {
     const nameButton = document.createElement('button');
     document.querySelector('.right-container').appendChild(nameInput);
     document.querySelector('.right-container').appendChild(nameButton);
-    nameInput.setAttribute('placeholder', 'Podaj swoje imię lub ksywkę');
+    nameInput.setAttribute('placeholder', 'Podaj swoje imię');
     nameButton.innerText = "Zapisz";
 
     nameButton.addEventListener(
@@ -151,6 +152,13 @@ Game.prototype.makeFieldWithScore = function () {
     const div = document.createElement("div");
     div.className = 'user-score-field';
     div.innerText = `Twój wynik: ${this.score}`;
+    document.querySelector('.middle-container').appendChild(div);
+};
+
+Game.prototype.makeFieldWithLevel = function () {
+    const div = document.createElement("div");
+    div.className = 'user-score-field';
+    this.gameEnd === false ? div.innerText = `Poziom 1`: div.innerText = `Poziom 2`;
     document.querySelector('.middle-container').appendChild(div);
 };
 
