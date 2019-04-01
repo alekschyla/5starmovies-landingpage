@@ -103,3 +103,34 @@ a:hover {
 .high-scores__list {
     padding: 10px;
 }
+.controls-field {
+    width : 500px;
+    background-color : #342A21;
+    color : white;
+    margin : 0 auto;
+    padding: 5px;
+    display: none;
+    justify-content: space-around;
+}
+@media screen and (max-width: 768px) {
+    .controls-field {
+        display: flex;
+        width: 400px;
+    }
+    .game-container {
+        flex-direction: column;
+    }
+    .left-container {
+        width: 400px;
+    }
+    .right-container {
+        width: 400px;
+    }
+    .game-board {
+        width: 400px;
+        height: 700px;
+    }
+    .user-score-field {
+        width: 400px;
+    }
+}
