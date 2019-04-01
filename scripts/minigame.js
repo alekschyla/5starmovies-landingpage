@@ -1,11 +1,11 @@
 function Game(selector) {
     this.container = document.querySelector(selector) || document.body;
 
-    this.oscarAmount = 5;
+    this.oscarAmount = 20;
     this.gameTick = 500;
     this.score = 0;
 
-    this.oscarAmountLvl2 = 10;
+    this.oscarAmountLvl2 = 50;
     this.gameTickLvl2 = 300;
     this.gameEnd = false;
 
@@ -46,6 +46,7 @@ Game.prototype.render = function () {
     this.makeGameBoardArray();
     this.makeGameBoard();
     this.makeFieldWithLevel();
+    this.makeFieldWithControls();
     this.placeHand();
     this.renderOscar();
     this.gameArray.forEach(row => {
@@ -159,6 +160,35 @@ Game.prototype.makeFieldWithLevel = function () {
     const div = document.createElement("div");
     div.className = 'user-score-field';
     this.gameEnd === false ? div.innerText = `Poziom 1`: div.innerText = `Poziom 2`;
+    document.querySelector('.middle-container').appendChild(div);
+};
+
+Game.prototype.makeFieldWithControls = function () {
+    const div = document.createElement("div");
+    div.className = 'controls-field';
+
+    const button1 = document.createElement('button');
+    button1.innerText = 'lewo';
+    div.appendChild(button1);
+    const button2 = document.createElement('button');
+    button2.innerText = 'start';
+    div.appendChild(button2);
+    const button3 = document.createElement('button');
+    button3.innerText = 'prawo';
+    div.appendChild(button3);
+
+    button1.addEventListener(
+        'click',
+        () => this.moveLeft()
+    );
+    button2.addEventListener(
+        'click',
+        () => this.oscarsInterval()
+    );
+    button3.addEventListener(
+        'click',
+        () => this.moveRight()
+    );
     document.querySelector('.middle-container').appendChild(div);
 };
 

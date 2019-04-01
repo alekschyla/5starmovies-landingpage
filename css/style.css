@@ -28,6 +28,7 @@ main {
     text-transform: uppercase;
     margin: 0px;
     padding: 0px;
+    border-bottom: 1px solid #342A21;
 }
 .menu__div {
     margin: 0px;
