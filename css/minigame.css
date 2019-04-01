@@ -1,30 +1,43 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #C9B79C url('../images/oscar-background.png') repeat;
+    font-family: 'Exo', sans-serif;
 }
-button,input {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+input, textarea, select, button {
+    font-family: 'Exo', sans-serif;
     font-size: 16px;
 }
 .game-container {
     display: flex;
     flex-direction: row;
     font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom: 10px solid #342A21;
 }
 .left-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 300px;
     margin: 0 auto;
     padding: 20px;
     color: white;
     background-color: #342A21;
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: #C9B79C;
 }
 .middle-container {
     width: auto;
@@ -40,7 +53,7 @@ button,input {
 .game-board {
     width : 500px;
     height : 800px;
-    background-color : #C9B79C;
+    background-color : #F1E0C5;
     margin : 0 auto;
     display : flex;
     flex-wrap : wrap;
@@ -48,12 +61,21 @@ button,input {
 .game-board-cell {
     text-align : center;
 }
+.hand-cell-left {
+    background: url("../images/leo-left.png") no-repeat center center;
+}
+.hand-cell-right {
+    background: url("../images/leo-right.png") no-repeat center center;
+}
+.oscar-cell {
+    background: url("../images/oscar.png") no-repeat center center;
+}
 .right-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 300px;
     margin: 0 auto;
     padding: 10px;
     color: white;
