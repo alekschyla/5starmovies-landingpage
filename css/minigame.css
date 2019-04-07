@@ -133,4 +133,10 @@ a:hover {
     .user-score-field {
         width: 400px;
     }
+    .hand-cell-left {
+        background: url("../images/leo-left.png") no-repeat right center;
+    }
+    .hand-cell-right {
+        background: url("../images/leo-right.png") no-repeat left center;
+    }
 }
