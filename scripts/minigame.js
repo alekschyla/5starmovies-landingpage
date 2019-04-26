@@ -91,7 +91,7 @@ Game.prototype.makeFieldWithGameInstructions = function () {
     const par3 = document.createElement('p');
     par3.innerText = `Aby rozpocząć poziom, naciśnij klawisz Enter.`;
     const link = document.createElement('a');
-    link.setAttribute('href','../index.hthml');
+    link.setAttribute('href', '../index.html');
     const button = document.createElement('button');
     button.innerText = 'Powrót do strony głównej';
 
@@ -159,7 +159,7 @@ Game.prototype.makeFieldWithScore = function () {
 Game.prototype.makeFieldWithLevel = function () {
     const div = document.createElement("div");
     div.className = 'user-score-field';
-    this.gameEnd === false ? div.innerText = `Poziom 1`: div.innerText = `Poziom 2`;
+    this.gameEnd === false ? div.innerText = `Poziom 1` : div.innerText = `Poziom 2`;
     document.querySelector('.middle-container').appendChild(div);
 };
 
@@ -179,16 +179,50 @@ Game.prototype.makeFieldWithControls = function () {
 
     button1.addEventListener(
         'click',
-        () => this.moveLeft()
+        (event) => {
+            event.preventDefault();
+            this.moveLeft();
+        }
     );
     button2.addEventListener(
         'click',
-        () => this.oscarsInterval()
+        (event) => {
+            event.preventDefault();
+            this.oscarsInterval();
+        }
     );
     button3.addEventListener(
         'click',
-        () => this.moveRight()
+        (event) => {
+            event.preventDefault();
+            this.moveRight();
+        }
     );
+
+    button1.addEventListener(
+        'dblclick',
+        (event) => {
+            event.preventDefault();
+            this.moveLeft();
+            this.moveLeft();
+        }
+    );
+    button2.addEventListener(
+        'dblclick',
+        (event) => {
+            event.preventDefault();
+            this.oscarsInterval();
+        }
+    );
+    button3.addEventListener(
+        'dblclick',
+        (event) => {
+            event.preventDefault();
+            this.moveRight();
+            this.moveRight();
+        }
+    );
+
     document.querySelector('.middle-container').appendChild(div);
 };
 
@@ -248,7 +282,7 @@ Game.prototype.renderCell = function (cell) {
     cellEl.style.height = this.cellDimension;
     if (cell === "h1") {
         cellEl.className = "hand-cell-left game-board-cell";
-    }if (cell === "h2") {
+    } if (cell === "h2") {
         cellEl.className = "hand-cell-right game-board-cell";
     }
     if (cell === "o") {
@@ -306,7 +340,10 @@ Game.prototype.startGame = function () {
     window.addEventListener(
         'keypress',
         (event) => {
-            if (event.key === "Enter") this.oscarsInterval();
+            if (event.key === "Enter") {
+                event.preventDefault();
+                this.oscarsInterval()
+            };
         }
     );
 };
