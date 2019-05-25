@@ -1,6 +1,6 @@
 # jfddl7-5starsmovies
 Projects website:
-http://www.5starsmovies.jfddl7.is-academy.pl/
+http://www.5starmovies.jfddl7.is-academy.pl/
 
 5starmovies is a team project made by 5 students at Front-end developer course at infoShareAcademy in Lublin.
 
