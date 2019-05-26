@@ -1,6 +1,8 @@
 # jfddl7-5starsmovies
 Projects website:
-http://www.5starmovies.jfddl7.is-academy.pl/
+http://5starmovies-landingpage.surge.sh/
+Minigame:
+http://5starmovies-landingpage.surge.sh/minigame.html
 
 5starmovies is a team project made by 5 students at Front-end developer course at infoShareAcademy in Lublin.
 
